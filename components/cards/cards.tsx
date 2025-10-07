@@ -18,10 +18,10 @@ interface CardsProps {
 }
 
 const cardColors = {
-  green: "bg-gradient-to-br from-green-300 to-green-400",
-  pink: "bg-gradient-to-br from-pink-300 to-pink-400",
-  purple: "bg-gradient-to-br from-purple-300 to-purple-400",
-  yellow: "bg-gradient-to-br from-yellow-200 to-yellow-300",
+  green: "bg-[#7AFCD0]",
+  pink: "bg-[#FFB8D2]",
+  purple: "bg-[#CDBBFF]",
+  yellow: "bg-[#F7FF9A]",
 };
 
 // Variantes d'animation
@@ -96,7 +96,7 @@ export const Cards: FC<CardsProps> = ({ title, subtitle, cards }) => {
               key={card.id}
               variants={cardVariants}
               whileHover={{
-                scale: 1.05,
+                scale: 1.03,
                 transition: { type: "spring", stiffness: 300 },
               }}
               className={`

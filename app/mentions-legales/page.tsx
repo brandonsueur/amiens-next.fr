@@ -7,15 +7,9 @@ export default function MentionsLegales() {
   return (
     <Layout>
       <Container className="mt-40 mb-20">
-        <PageTitle
-          title="Mentions légales"
-          subTitle="Informations juridiques"
-          description="Consultez les informations juridiques concernant notre site web et notre société."
-        />
-
         <div className="prose prose-lg max-w-none">
           <section className="mb-8">
-            <h2 className="text-2xl font-ca-slalom font-semibold text-primary mb-4">
+            <h2 className="text-2xl font-airbnb font-medium text-black mb-4">
               Édition du site
             </h2>
             <p className="mt-4 text-lg text-gray-500">
@@ -26,33 +20,33 @@ export default function MentionsLegales() {
               {project.contact.address}.
             </p>
             <p className="mt-4 text-lg text-gray-500">
-              Numéro de TVA intracommunautaire : FR80990102626
+              Numéro de TVA intracommunautaire : X
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-ca-slalom font-semibold text-primary mb-4">
+            <h2 className="text-2xl font-airbnb font-medium text-black mb-4">
               Directeur de la publication
             </h2>
             <p className="mt-4 text-lg text-gray-500">
-              Le directeur de la publication est M.Scellier Julien et M.Durier
-              Anthony, en qualité de gérant de la société {project.siteName}.
+              Le directeur de la publication est Brandon Sueur, en qualité de
+              gérant de la société {project.siteName}.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-ca-slalom font-semibold text-primary mb-4">
+            <h2 className="text-2xl font-airbnb font-medium text-black mb-4">
               Développement & Maintenance
             </h2>
 
             <p className="mt-4 text-lg text-gray-500">
               Le site {project.siteName} a été développé et maintenu par la
-              société Hulli Studio.
+              société H2BS GROUP.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-ca-slalom font-semibold text-primary mb-4">
+            <h2 className="text-2xl font-airbnb font-medium text-black mb-4">
               Hébergement
             </h2>
             <p className="mt-4 text-lg text-gray-500">
@@ -62,7 +56,7 @@ export default function MentionsLegales() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-ca-slalom font-semibold text-primary mb-4">
+            <h2 className="text-2xl font-airbnb font-medium text-black mb-4">
               Propriété intellectuelle
             </h2>
             <p className="mt-4 text-lg text-gray-500">
@@ -84,7 +78,7 @@ export default function MentionsLegales() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-ca-slalom font-semibold text-primary mb-4">
+            <h2 className="text-2xl font-airbnb font-medium text-black mb-4">
               Protection des données personnelles
             </h2>
             <p className="mt-4 text-lg text-gray-500">
@@ -107,7 +101,7 @@ export default function MentionsLegales() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-ca-slalom font-semibold text-primary mb-4">
+            <h2 className="text-2xl font-airbnb font-medium text-black mb-4">
               Contact
             </h2>
             <p className="mt-4 text-lg text-gray-500">

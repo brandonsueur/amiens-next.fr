@@ -81,7 +81,7 @@ export function FAQ() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 bg-white">
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-4xl lg:text-4xl font-medium text-gray-900 mb-4">
