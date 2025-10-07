@@ -40,8 +40,8 @@ export const Menu = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 md:mt-8 ${
-        scrolled ? "bg-white shadow-md py-2" : "py-4"
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-white shadow-sm py-4" : "py-4 md:mt-8"
       }`}
     >
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
