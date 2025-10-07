@@ -84,23 +84,20 @@ export function FAQ() {
     <section className="py-16 md:py-24 bg-white">
       <Container>
         <div className="text-center mb-16">
-          <motion.h2 className="text-2xl md:text-4xl lg:text-4xl font-medium text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-4xl lg:text-4xl font-medium text-gray-900 mb-4">
             Questions fréquentes
-          </motion.h2>
-          <motion.p className="text-md text-gray-600 max-w-3xl mx-auto">
+          </h2>
+          <p className="text-md text-gray-600 max-w-3xl mx-auto">
             Retrouvez ici les réponses aux questions que nos membres nous posent
             le plus souvent
-          </motion.p>
+          </p>
         </div>
 
         {/* FAQ Items */}
         <div className="max-w-4xl mx-auto space-y-2">
-          {faqData.map((item, index) => (
-            <motion.div
+          {faqData.map((item) => (
+            <div
               key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className={clsx(
                 "rounded-xl overflow-hidden transition-all duration-300",
                 openItems.has(item.id)
@@ -180,7 +177,7 @@ export function FAQ() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Container>
