@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "../container";
-import { SectionTitle } from "../sectionTitle";
-import { SquareArrowDownRight, SquareArrowRight } from "lucide-react";
 import clsx from "clsx";
 
 interface FAQItem {
@@ -70,7 +68,7 @@ const faqData: FAQItem[] = [
 ];
 
 export function FAQ() {
-  const [openItems, setOpenItems] = useState<Set<string>>(new Set(["toto-1"]));
+  const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
   const toggleItem = (id: string) => {
     const newOpenItems = new Set(openItems);
@@ -83,64 +81,69 @@ export function FAQ() {
   };
 
   return (
-    <section className="py-16 px-6">
+    <section className="py-16 md:py-24 bg-white">
       <Container>
-        <SectionTitle
-          subTitle="FAQ"
-          title="Questions fréquentes"
-          description="Retrouvez ici les réponses aux questions que nos clients nous posent le plus souvent, pour vous aider à mieux comprendre nos services et nos engagements."
-        />
+        <div className="text-center mb-16">
+          <motion.h2 className="text-2xl md:text-4xl lg:text-4xl font-medium text-gray-900 mb-4">
+            Questions fréquentes
+          </motion.h2>
+          <motion.p className="text-md text-gray-600 max-w-3xl mx-auto">
+            Retrouvez ici les réponses aux questions que nos membres nous posent
+            le plus souvent
+          </motion.p>
+        </div>
 
         {/* FAQ Items */}
-        <div className="space-y-0 border border-[#4A4A4A] rounded-lg overflow-hidden">
+        <div className="max-w-4xl mx-auto space-y-2">
           {faqData.map((item, index) => (
-            <div
+            <motion.div
               key={item.id}
-              className={index !== 0 ? "border-t border-[#4A4A4A]" : ""}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={clsx(
+                "rounded-xl overflow-hidden transition-all duration-300",
+                openItems.has(item.id)
+                  ? "bg-[#7AFCD0] border-green-200"
+                  : "bg-[#FAF8F4]"
+              )}
             >
               {/* Question Button */}
               <button
                 onClick={() => toggleItem(item.id)}
-                className="w-full flex cursor-pointer items-center justify-between p-6 text-left transition-colors duration-200"
+                className="w-full flex items-center justify-between p-2 md:p-4 text-left transition-colors duration-200 group"
               >
-                <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center">
-                    <motion.div className="text-black font-bold text-lg">
-                      {openItems.has(item.id) ? (
-                        <SquareArrowDownRight className="text-secondary" />
-                      ) : (
-                        <SquareArrowRight className="text-black" />
-                      )}
-                    </motion.div>
-                  </div>
-                  <h3
-                    className={clsx(
-                      "text-black text-xl font-semibold font-ca-slalom",
-                      openItems.has(item.id) ? "text-secondary" : ""
-                    )}
-                  >
-                    {item.question}
-                  </h3>
-                </div>
+                <h3 className="text-lg font-medium text-gray-900 pr-4 transition-colors duration-200">
+                  {item.question}
+                </h3>
 
                 <motion.div
-                  animate={{ rotate: openItems.has(item.id) ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex-shrink-0 ml-4"
+                  animate={{ rotate: openItems.has(item.id) ? 45 : 0 }}
+                  transition={{ duration: 0.1, ease: "easeInOut" }}
+                  className="flex-shrink-0"
                 >
-                  <svg
-                    className="w-5 h-5 text-gray-400"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                  <div
+                    className={clsx(
+                      "w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-200",
+                      openItems.has(item.id)
+                        ? " text-[green-600]"
+                        : "text-gray-600 group-hover:bg-white"
+                    )}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
+                    <svg
+                      className="w-4 h-4 font-bold"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={3}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 4v16m8-8H4"
+                      />
+                    </svg>
+                  </div>
                 </motion.div>
               </button>
 
@@ -152,27 +155,32 @@ export function FAQ() {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden border-t border-[#4A4A4A]"
+                    className="overflow-hidden"
                   >
-                    <div className="p-6 bg-white ">
-                      {Array.isArray(item.answer) ? (
-                        <div className="space-y-4">
-                          {item.answer.map((paragraph, idx) => (
-                            <p key={idx} className="text-black font-epilogue">
-                              {paragraph}
-                            </p>
-                          ))}
-                        </div>
-                      ) : (
-                        <p className="text-gray-500 font-epilogue">
-                          {item.answer}
-                        </p>
-                      )}
+                    <div className="px-6 md:px-8 pb-6 md:pb-8 pt-0">
+                      <div className=" pt-6">
+                        {Array.isArray(item.answer) ? (
+                          <div className="space-y-4">
+                            {item.answer.map((paragraph, idx) => (
+                              <p
+                                key={idx}
+                                className="text-black leading-relaxed"
+                              >
+                                {paragraph}
+                              </p>
+                            ))}
+                          </div>
+                        ) : (
+                          <div className="text-black leading-relaxed">
+                            {item.answer}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
           ))}
         </div>
       </Container>
