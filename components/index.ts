@@ -2,6 +2,7 @@ export * from "./activityDetail";
 export * from "./activityFAQ";
 export * from "./appointmentForm";
 export * from "./banner";
+export * from "./cards";
 export * from "./contactForm";
 export * from "./faq";
 export * from "./modal";

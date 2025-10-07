@@ -1,6 +1,4 @@
-import { Banner, Cards } from "@/components";
-import { Layout } from "@/components/layout";
-import { FAQ } from "@/components";
+import { Cards } from "@/components";
 
 const cardsData = [
   {
@@ -29,17 +27,12 @@ const cardsData = [
   },
 ];
 
-export default function Home() {
+export const StatsSection = () => {
   return (
-    <Layout>
-      <Banner />
-
-      <Cards
-        title="Amiens Next, c’est le lieu où les dirigeants et indépendants de qualité se rencontrent, s’inspirent et avancent ensemble."
-        cards={cardsData}
-      />
-
-      <FAQ />
-    </Layout>
+    <Cards
+      title="Amiens Next, c'est le lieu où les dirigeants et indépendants de qualité"
+      subtitle="se rencontrent, s'inspirent et avancent ensemble."
+      cards={cardsData}
+    />
   );
-}
+};
