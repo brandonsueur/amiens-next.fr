@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export const Layout = ({ children, className }: LayoutProps) => {
   return (
-    <div className="relative min-h-screen flex flex-col bg-white">
+    <div className="relative min-h-screen flex flex-col bg-[#FAF8F4]">
       <div className="bg-white fixed inset-x-0 top-0 z-40 isolate">
         <Menu />
       </div>
