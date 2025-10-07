@@ -47,7 +47,7 @@ export default function CollectifPage() {
           <div className="absolute top-40 right-20 w-24 h-24 bg-primary rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-1/3 w-28 h-28 bg-secondary rounded-full blur-3xl"></div>
         </div>
-        
+
         <Container className="relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <motion.div
@@ -72,9 +72,10 @@ export default function CollectifPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg md:text-xl text-black font-epilogue leading-relaxed max-w-4xl mx-auto mb-12"
             >
-              Découvrez une communauté d'entrepreneurs passionnés qui transforment Amiens 
-              en territoire d'innovation et de croissance. Freelances, dirigeants, artisans 
-              et startuppers unis par une même ambition.
+              Découvrez une communauté d'entrepreneurs passionnés qui
+              transforment Amiens en territoire d'innovation et de croissance.
+              Freelances, dirigeants, artisans et startuppers unis par une même
+              ambition.
             </motion.p>
 
             <motion.div
@@ -98,9 +99,9 @@ export default function CollectifPage() {
                 { label: "Freelances" },
                 { label: "Startups" },
                 { label: "Artisans" },
-                { label: "Dirigeants" }
+                { label: "Dirigeants" },
               ].map((profile) => (
-                <div 
+                <div
                   key={profile.label}
                   className="px-4 py-2 bg-gray-50 rounded-lg border border-gray-100 hover:bg-gray-100 transition-colors duration-200"
                 >
@@ -128,10 +129,10 @@ export default function CollectifPage() {
                 Notre Mission
               </h2>
               <p className="text-md text-black font-epilogue leading-relaxed max-w-3xl mx-auto">
-                Amiens Next rassemble la nouvelle génération d'entrepreneurs amiénois. 
-                Notre mission est de créer un écosystème dynamique où freelances, dirigeants, 
-                artisans et startuppers se rencontrent, s'inspirent et collaborent pour faire 
-                rayonner notre territoire.
+                Amiens Next rassemble la nouvelle génération d'entrepreneurs
+                amiénois. Notre mission est de créer un écosystème dynamique où
+                freelances, dirigeants, artisans et startuppers se rencontrent,
+                s'inspirent et collaborent pour faire rayonner notre territoire.
               </p>
             </motion.div>
 
@@ -182,20 +183,24 @@ export default function CollectifPage() {
             {[
               {
                 title: "Communauté",
-                description: "Une communauté bienveillante d'entrepreneurs qui s'entraident et partagent leurs expériences."
+                description:
+                  "Une communauté bienveillante d'entrepreneurs qui s'entraident et partagent leurs expériences.",
               },
               {
                 title: "Ambition",
-                description: "L'ambition de faire d'Amiens un territoire d'innovation et d'entrepreneuriat reconnu."
+                description:
+                  "L'ambition de faire d'Amiens un territoire d'innovation et d'entrepreneuriat reconnu.",
               },
               {
-                title: "Authenticité", 
-                description: "Des échanges sincères et authentiques, loin des codes du networking traditionnel."
+                title: "Authenticité",
+                description:
+                  "Des échanges sincères et authentiques, loin des codes du networking traditionnel.",
               },
               {
                 title: "Entraide",
-                description: "L'entraide et la collaboration avant la compétition, pour grandir ensemble."
-              }
+                description:
+                  "L'entraide et la collaboration avant la compétition, pour grandir ensemble.",
+              },
             ].map((value, index) => (
               <motion.div
                 key={value.title}
@@ -242,20 +247,20 @@ export default function CollectifPage() {
             {[
               {
                 title: "Freelances",
-                description: "Consultants, créatifs, experts indépendants"
+                description: "Consultants, créatifs, experts indépendants",
               },
               {
-                title: "Startups", 
-                description: "Porteurs de projets innovants et disruptifs"
+                title: "Startups",
+                description: "Porteurs de projets innovants et disruptifs",
               },
               {
                 title: "Artisans",
-                description: "Artisans et commerçants de qualité"
+                description: "Artisans et commerçants de qualité",
               },
               {
                 title: "Dirigeants",
-                description: "CEO, fondateurs, gérants d'entreprises"
-              }
+                description: "CEO, fondateurs, gérants d'entreprises",
+              },
             ].map((type, index) => (
               <motion.div
                 key={type.title}
@@ -294,7 +299,8 @@ export default function CollectifPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-md text-black font-epilogue max-w-3xl mx-auto"
             >
-              Des rencontres régulières pour échanger, apprendre et grandir ensemble
+              Des rencontres régulières pour échanger, apprendre et grandir
+              ensemble
             </motion.p>
           </div>
 
@@ -302,16 +308,19 @@ export default function CollectifPage() {
             {[
               {
                 title: "Matinales Business",
-                description: "Petit-déjeuners mensuels pour échanger sur vos projets et actualités dans une ambiance détendue."
+                description:
+                  "Petit-déjeuners mensuels pour échanger sur vos projets et actualités dans une ambiance détendue.",
               },
               {
                 title: "Afterworks",
-                description: "Soirées networking conviviales pour développer votre réseau et créer des collaborations."
+                description:
+                  "Soirées networking conviviales pour développer votre réseau et créer des collaborations.",
               },
               {
                 title: "Talks Inspirants",
-                description: "Conférences avec des entrepreneurs locaux et nationaux pour partager expériences et conseils."
-              }
+                description:
+                  "Conférences avec des entrepreneurs locaux et nationaux pour partager expériences et conseils.",
+              },
             ].map((event, index) => (
               <motion.div
                 key={event.title}
@@ -353,7 +362,7 @@ export default function CollectifPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-md text-black font-epilogue leading-relaxed mb-8"
             >
-              Intégrez une communauté d'entrepreneurs dynamiques et contribuez 
+              Intégrez une communauté d'entrepreneurs dynamiques et contribuez
               au rayonnement économique d'Amiens et de sa région.
             </motion.p>
             <motion.div
