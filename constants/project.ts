@@ -67,6 +67,7 @@ export const project = {
   contact: {
     address: "Amiens, Hauts-de-France",
     email: "contact@amiens-next.fr",
+    phone: "0608151628",
   },
   socials: socials,
 };
