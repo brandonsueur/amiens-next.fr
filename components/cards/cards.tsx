@@ -58,7 +58,7 @@ export const Cards: FC<CardsProps> = ({ title, subtitle, cards }) => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section className="py-16 md:py-24 bg-white" ref={ref}>
+    <section className="py-16 md:pb-24 md:pt-16 bg-white" ref={ref}>
       <Container>
         {(title || subtitle) && (
           <div className="text-center mb-16">

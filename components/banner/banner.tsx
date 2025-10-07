@@ -22,7 +22,7 @@ const entrepreneurActivities = [
 
 export const Banner = () => {
   return (
-    <Container className="mt-52 z-10 mb-32">
+    <Container className="mt-52 z-10">
       <div className="space-x-reverse md:grid md:grid-cols-12 gap-x-8  items-center">
         <div className="md:col-span-12 lg:col-span-7 xl:col-span-7">
           <h1 className="text-4xl font-airbnb text-black lg:text-5xl font-medium leading-12 md:leading-16 mb-4 font-ca-slalom coin-shimmer-responsive">
