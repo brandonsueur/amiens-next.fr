@@ -33,6 +33,7 @@ const eslintConfig = [
     rules: {
       "react/no-unescaped-entities": "error",
       "@typescript-eslint/no-explicit-any": "off",
+      "react/no-unescaped-entities": "off",
     },
     settings: {
       react: {

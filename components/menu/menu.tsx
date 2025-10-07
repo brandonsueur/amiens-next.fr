@@ -40,7 +40,7 @@ export const Menu = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 mt-12 md:mt-9 ${
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 md:mt-8 ${
         scrolled ? "bg-white shadow-md py-2" : "py-4"
       }`}
     >
@@ -48,7 +48,7 @@ export const Menu = () => {
         {/* Logo */}
         <Link href="/">
           <Image
-            src="/logo-blue.svg"
+            src="/img/logo.svg"
             alt="Logo Inergis"
             width={180}
             height={49}
@@ -74,7 +74,7 @@ export const Menu = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-primary hover:text-blue-700 transition-colors"
+                className="text-black hover:text-black/70 transition-colors"
               >
                 {link.label}
               </Link>

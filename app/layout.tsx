@@ -48,23 +48,7 @@ export default function RootLayout({
         <title>{project.title}</title>
       </head>
 
-      <body className="antialiased font-airbnb">
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-QFV66TZX3P"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-QFV66TZX3P');
-          `}
-        </Script>
-
-        {children}
-      </body>
+      <body className="antialiased font-airbnb">{children}</body>
     </html>
   );
 }

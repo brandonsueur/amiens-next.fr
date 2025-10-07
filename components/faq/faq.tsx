@@ -15,27 +15,57 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    id: "toto-1",
-    question: "Vos devis sont-ils vraiment gratuits ?",
+    id: "amiensnext-1",
+    question: "Qu’est-ce qu’Amiens Next ?",
     answer:
-      "Oui, nos devis sont entièrement gratuits et sans engagement. Vous pouvez nous contacter pour une simple estimation, que ce soit pour une intervention en électricité, en plomberie ou pour un projet d’énergies renouvelables, sans aucun frais caché. Notre objectif est de vous accompagner dans votre projet en toute confiance. Le devis gratuit est une première étape pour établir une relation basée sur la transparence, la fiabilité et le respect de votre budget.",
+      "Amiens Next est le collectif de la nouvelle génération d’entrepreneurs Amiénois. Il rassemble freelances, dirigeants, artisans et startupers qui souhaitent échanger, collaborer, innover et faire grandir leurs projets ensemble. Chaque rencontre est une opportunité de créer du lien et de faire avancer son business localement.",
   },
   {
-    id: "toto-2",
-    question: "Que faire en cas d’urgence (panne électrique, fuite d’eau) ?",
+    id: "amiensnext-2",
+    question: "Qui peut rejoindre Amiens Next ?",
     answer:
-      "En cas d’urgence, nous vous conseillons de nous contacter immédiatement. Notre équipe est disponible 24/7 pour répondre à vos besoins urgents en électricité, plomberie ou autres services. Nous mettons tout en œuvre pour intervenir rapidement et résoudre votre problème dans les meilleurs délais.",
+      "Le collectif est ouvert à tous les profils entrepreneuriaux : freelances, dirigeants, artisans, commerçants, startupers et porteurs de projets. Ce qui compte avant tout, c’est l’envie de partager, de progresser et de contribuer au dynamisme économique local.",
   },
   {
-    id: "toto-3",
-    question: "Quels types de services proposez-vous ?",
+    id: "amiensnext-3",
+    question: "Y a-t-il un coût d’adhésion ?",
+    answer:
+      "Oui, une adhésion annuelle symbolique permet de soutenir le collectif et de participer aux événements (afterworks, matinales, talks). Elle garantit aussi la qualité des échanges et le bon fonctionnement de la communauté.",
+  },
+  {
+    id: "amiensnext-4",
+    question: "Quels types d’événements organisez-vous ?",
     answer: (
       <ul className="list-disc list-inside space-y-2">
-        <li>Interventions en électricité</li>
-        <li>Services de plomberie</li>
-        <li>Projets d’énergies renouvelables</li>
+        <li>☕ Matinales business pour échanger sur vos projets et actus</li>
+        <li>🍷 Afterworks pour réseauter dans une ambiance conviviale</li>
+        <li>🎤 Talks inspirants avec des invités locaux et nationaux</li>
       </ul>
     ),
+  },
+  {
+    id: "amiensnext-5",
+    question: "Pourquoi rejoindre Amiens Next ?",
+    answer:
+      "Rejoindre Amiens Next, c’est intégrer une communauté d’entrepreneurs engagés, gagner en visibilité, développer son réseau local et trouver des opportunités concrètes. C’est aussi bénéficier d’un cadre bienveillant où l’entraide et l’échange priment sur la compétition.",
+  },
+  {
+    id: "amiensnext-6",
+    question: "Comment se déroule une rencontre Amiens Next ?",
+    answer:
+      "Chaque rencontre dure environ 1h à 2h, dans un lieu convivial à Amiens ou alentours. L’idée est de créer des échanges sincères, d’apprendre les uns des autres et de repartir avec des connexions utiles, sans perdre de temps après une journée de travail.",
+  },
+  {
+    id: "amiensnext-7",
+    question: "Puis-je proposer mon entreprise pour apparaître dans le Guide ?",
+    answer:
+      "Oui ! Si vous êtes entrepreneur ou artisan à Amiens, vous pouvez proposer votre entreprise pour être intégrée au Guide Amiens Next. Il s’agit d’une sélection locale valorisant les acteurs de confiance de la région.",
+  },
+  {
+    id: "amiensnext-8",
+    question: "Comment être informé des prochains événements ?",
+    answer:
+      "Vous pouvez suivre Amiens Next sur Instagram et LinkedIn, ou vous inscrire à la newsletter pour recevoir le calendrier des événements à venir et les nouveautés du collectif.",
   },
 ];
 

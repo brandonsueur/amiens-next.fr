@@ -12,23 +12,22 @@ export interface ButtonProps {
   disabled?: boolean;
   loading?: boolean;
   fullWidth?: boolean;
-  fullRounded?: boolean;
   className?: string;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   type?: "button" | "submit" | "reset";
 }
 
 const buttonVariants = {
-  primary: "bg-secondary text-white hover:bg-primary!",
+  primary: "bg-black text-white hover:bg-black/90",
   secondary: "bg-white text-black border-gray-300 hover:bg-gray-50",
   outline:
-    "bg-transparent text-black border-2 text-primary border-primary hover:bg-primary hover:text-white",
+    "bg-transparent text-black border-2 text-black border-black hover:bg-black/90 hover:text-white",
   ghost: "bg-transparent text-black border-transparent hover:bg-gray-100",
 };
 
 const buttonSizes = {
   sm: "px-4 py-2 text-sm",
-  md: "px-6 py-3 text-sm",
+  md: "px-10 py-3 text-sm",
   lg: "px-8 py-4 text-base",
   xl: "px-10 py-5 text-lg",
 };
@@ -51,7 +50,6 @@ export const Button: React.FC<ButtonProps> = ({
   disabled = false,
   loading = false,
   fullWidth = false,
-  fullRounded = false,
   className,
   onClick,
   type = "button",
@@ -60,8 +58,7 @@ export const Button: React.FC<ButtonProps> = ({
   const isIconOnly = Icon && !children;
 
   const baseClasses = clsx(
-    "group relative flex items-center justify-center border font-ca-slalom font-bold transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-gray-400 hover:scale-[1.02] active:scale-[0.98]",
-    fullRounded ? "rounded-full" : "rounded-lg",
+    "group relative flex items-center justify-center border font-ca-slalom font-normal rounded-full transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-gray-400 hover:scale-[1.02] active:scale-[0.98]",
     buttonSizes[size],
     fullWidth ? "w-full" : "w-auto",
     isIconOnly && "p-0",
@@ -98,12 +95,7 @@ export const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       {variant === "primary" && (
-        <div
-          className={clsx(
-            "absolute inset-0 duration-200",
-            fullRounded ? "rounded-full" : "rounded-lg"
-          )}
-        />
+        <div className={clsx("absolute inset-0 duration-200 rounded-full")} />
       )}
 
       <div className="relative z-10 flex items-center justify-center">
