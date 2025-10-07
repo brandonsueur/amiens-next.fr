@@ -94,7 +94,7 @@ export function FAQ() {
         </div>
 
         {/* FAQ Items */}
-        <div className="max-w-4xl mx-auto space-y-2">
+        <div className="max-w-7xl mx-auto space-y-2">
           {faqData.map((item) => (
             <div
               key={item.id}
@@ -108,7 +108,7 @@ export function FAQ() {
               {/* Question Button */}
               <button
                 onClick={() => toggleItem(item.id)}
-                className="w-full flex items-center justify-between p-2 md:p-4 text-left transition-colors duration-200 group"
+                className="w-full flex items-center justify-between p-2 md:p-4 text-left transition-colors duration-200 group cursor-pointer"
               >
                 <h3 className="text-lg font-medium text-gray-900 pr-4 transition-colors duration-200">
                   {item.question}
