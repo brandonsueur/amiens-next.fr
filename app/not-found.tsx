@@ -1,63 +1,103 @@
+"use client";
+
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { Layout } from "@/components/layout";
-import { PageTitle } from "@/components/pageTitle";
 import { Button } from "@/components/button";
-import { project } from "@/constants/project";
+import { motion } from "framer-motion";
+import { Home, ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   return (
     <Layout>
-      <Container className="mt-40 mb-20 flex flex-col items-center">
-        <div className="flex flex-col items-center text-center mb-16">
-          <span className="text-8xl font-ca-slalom font-bold text-secondary">
-            404
-          </span>
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <Container className="py-20">
+          <div className="text-center max-w-2xl mx-auto">
+            {/* 404 Number */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-8"
+            >
+              <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-4">
+                404
+              </h1>
+            </motion.div>
 
-          <PageTitle
-            title="Page non trouvée"
-            subTitle="Erreur"
-            description="La page que vous recherchez semble introuvable."
-            centered
-          />
+            {/* Main content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-12"
+            >
+              <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
+                Page non trouvée
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                La page que vous recherchez n'existe pas ou a été déplacée.
+                Vérifiez l'URL saisie ou retournez à la page d'accueil.
+              </p>
+            </motion.div>
 
-          <div className="mt-8 max-w-xl text-lg text-gray-500">
-            <p>
-              Nous sommes désolés, mais la page que vous avez demandée
-              n&apos;existe pas ou a été déplacée. Veuillez vérifier l&apos;URL
-              ou revenir à la page d&apos;accueil.
-            </p>
+            {/* Action buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            >
+              <Link href="/">
+                <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg flex items-center gap-2 transition-colors duration-200">
+                  <Home size={18} />
+                  Retour à l'accueil
+                </Button>
+              </Link>
+
+              <button
+                onClick={() => window.history.back()}
+                className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-8 py-3 rounded-lg flex items-center gap-2 transition-colors duration-200"
+              >
+                <ArrowLeft size={18} />
+                Page précédente
+              </button>
+            </motion.div>
+
+            {/* Navigation suggestions */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="bg-gray-50 rounded-lg p-8 border border-gray-100"
+            >
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                Pages principales
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                <Link
+                  href="/"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200"
+                >
+                  → Accueil
+                </Link>
+                <Link
+                  href="/services"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200"
+                >
+                  → Services
+                </Link>
+                <Link
+                  href="/mentions-legales"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200"
+                >
+                  → Mentions légales
+                </Link>
+              </div>
+            </motion.div>
           </div>
-
-          <div className="mt-10">
-            <Link href="/" passHref>
-              <Button variant="primary" size="lg">
-                Retour à l&apos;accueil
-              </Button>
-            </Link>
-          </div>
-        </div>
-
-        <div className="w-full max-w-md p-6 bg-gray-50 rounded-lg border border-gray-100">
-          <h3 className="text-lg font-ca-slalom font-semibold text-primary mb-4">
-            Besoin d&apos;aide ?
-          </h3>
-          <p className="text-gray-500 mb-4">
-            Si vous avez des questions ou si vous cherchez une information
-            spécifique, n&apos;hésitez pas à nous contacter.
-          </p>
-          <div className="flex flex-col space-y-2">
-            <p className="text-sm text-gray-600">
-              <strong>Email:</strong>{" "}
-              {project.contact?.email || "contact@inergis.fr"}
-            </p>
-            <p className="text-sm text-gray-600">
-              <strong>Téléphone:</strong>{" "}
-              {project.contact?.phone || "03 XX XX XX XX"}
-            </p>
-          </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </Layout>
   );
 }

@@ -6,12 +6,12 @@ import { FC } from "react";
 
 export const Footer: FC = () => {
   return (
-    <footer className=" bg-primary border-2 border-[#262626] rounded-lg px-12 pt-10 mb-2 mx-2 sm:mx-8 xl:mx-16 mt-14 sm:mb-10 flex flex-col gap-8">
+    <footer className="px-12 pt-10 mb-2 mx-2 sm:mx-8 xl:mx-16 mt-14 sm:mb-10 flex flex-col gap-8">
       <div className="flex flex-col sm:flex-row justify-between gap-8 flex-wrap">
         <div>
           <Link href="/">
             <Image
-              src="/logo-white.svg"
+              src="/img/logo.svg"
               alt="Logo Inergis"
               width={140}
               height={45}
@@ -19,7 +19,7 @@ export const Footer: FC = () => {
             />
           </Link>
 
-          <p className="mt-4 text-md text-white leading-relaxed max-w-md">
+          <p className="mt-8 text-md text-black leading-relaxed max-w-md">
             {project.shortDescription}
           </p>
 
@@ -44,13 +44,13 @@ export const Footer: FC = () => {
         </div>
         {footerConfig.sections.map((section, index) => (
           <div key={index} className="flex flex-col gap-2 min-w-[150px]">
-            <h3 className="text-xl font-ca-slalom font-bold text-white mb-2">
+            <h3 className="text-xl font-ca-slalom font-bold text-black mb-2">
               {section.title}
             </h3>
 
             {section.links.map((link, idx) => (
               <Link key={idx} href={link.href}>
-                <span className="text-base font-light font-epilogue text-md text-white leading-relaxed hover:text-white transition-colors">
+                <span className="text-base font-light font-epilogue text-md text-black leading-relaxed hover:text-black transition-colors">
                   {link.label}
                 </span>
               </Link>
@@ -60,7 +60,7 @@ export const Footer: FC = () => {
       </div>
 
       <div className="pt-6 pb-10 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p className="font-ca-slalom text-white text-sm">
+        <p className="font-ca-slalom text-black text-sm">
           © {new Date().getFullYear()} {project.siteName}. Tous droits réservés.
           Développé par{" "}
           <Link href="https://www.hulli.studio">Hulli Studio</Link>.
