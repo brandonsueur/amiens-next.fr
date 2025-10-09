@@ -28,7 +28,7 @@ export const homeFaqData: FAQItem[] = [
     id: "home-4",
     question: "Y a-t-il des frais d'adhésion ?",
     answer:
-      "Une cotisation annuelle symbolique permet de soutenir l'organisation des événements et de garantir un cadre de qualité pour tous les membres du collectif.",
+      "Une cotisation annuelle de 50€ permet de soutenir l'organisation des événements et de garantir un cadre de qualité pour tous les membres du collectif. Ce montant symbolique couvre les frais de lieux, collations et organisation.",
   },
   {
     id: "home-5",
@@ -69,6 +69,12 @@ export const collectifFaqData: FAQItem[] = [
     question: "Y a-t-il des opportunités business concrètes ?",
     answer:
       "Oui ! De nombreuses collaborations, partenariats et projets communs naissent lors de nos événements. C'est l'un des objectifs : créer des synergies business locales.",
+  },
+  {
+    id: "collectif-7",
+    question: "Quel est le coût de l'adhésion annuelle ?",
+    answer:
+      "L'adhésion est de 50€ par an, un montant symbolique qui couvre les frais d'organisation (lieux, collations, supports) et garantit la qualité de nos événements. Cela représente environ 4€ par mois pour accéder à tous nos événements.",
   },
 ];
 
