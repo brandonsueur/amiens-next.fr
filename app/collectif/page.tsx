@@ -424,38 +424,148 @@ export default function CollectifPage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 max-w-3xl mx-auto text-center"
+            className="mt-16 max-w-5xl mx-auto"
           >
-            <h3 className="text-xl font-medium text-black mb-6 font-ca-slalom">
-              Nos critères d'adhésion
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-medium text-black mb-4 font-ca-slalom">
+                Nos critères d'adhésion
+              </h3>
+              <p className="text-gray-600 font-epilogue max-w-2xl mx-auto">
+                Rejoindre Amiens Next nécessite de répondre à ces 3 critères fondamentaux qui garantissent la cohésion et la qualité de notre communauté
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
               {[
                 {
-                  criterion: "Esprit entrepreneurial",
-                  description:
-                    "Avoir un projet, une entreprise ou une activité entrepreneuriale",
+                  criterion: "Esprit Entrepreneurial",
+                  description: "Avoir un projet, une entreprise ou une activité entrepreneuriale active ou en développement",
+                  details: "Que vous soyez en phase d'idéation, de lancement ou de développement, l'important est d'avoir une démarche entrepreneuriale",
+                  examples: ["Entreprise en activité", "Projet en cours", "Freelance actif", "Startup en création"],
+                  icon: "💡",
+                  requirement: "Obligatoire"
                 },
                 {
-                  criterion: "Ancrage territorial",
-                  description:
-                    "Être basé à Amiens ou dans les alentours à 1 heure de route",
+                  criterion: "Ancrage Territorial",
+                  description: "Être basé à Amiens, dans la métropole ou dans un rayon de 50km maximum",
+                  details: "Notre focus est de développer l'écosystème local amiénois et de créer des synergies de proximité",
+                  examples: ["Amiens centre", "Métropole amiénoise", "Somme (80)", "Dans un rayon de 50km"],
+                  icon: "📍",
+                  requirement: "Obligatoire"
                 },
                 {
-                  criterion: "Esprit collectif",
-                  description:
-                    "Partager nos valeurs de collaboration et d'entraide",
+                  criterion: "Esprit Collectif",
+                  description: "Partager nos valeurs de collaboration, d'entraide et de bienveillance entrepreneuriale",
+                  details: "Nous recherchons des entrepreneurs qui privilégient la collaboration à la compétition et l'entraide au profit personnel",
+                  examples: ["Mindset collaboratif", "Esprit d'entraide", "Bienveillance", "Partage d'expérience"],
+                  icon: "🤲",
+                  requirement: "Essentiel"
                 },
               ].map((item, index) => (
-                <div key={index} className="text-center">
-                  <h4 className="font-medium text-black font-ca-slalom mb-2">
-                    {item.criterion}
-                  </h4>
-                  <p className="text-sm text-gray-600 font-epilogue">
-                    {item.description}
-                  </p>
+                <div key={index} className="bg-gray-50 p-8 rounded-2xl hover:bg-gray-100 transition-colors duration-300">
+                  <div className="text-center mb-6">
+                    <span className="text-4xl mb-4 block">{item.icon}</span>
+                    <div className="flex items-center justify-center gap-2 mb-3">
+                      <h4 className="font-medium text-black font-ca-slalom">
+                        {item.criterion}
+                      </h4>
+                      <span className="text-xs px-2 py-1 bg-black text-white rounded-full font-epilogue">
+                        {item.requirement}
+                      </span>
+                    </div>
+                    <p className="text-sm text-gray-600 font-epilogue mb-4">
+                      {item.description}
+                    </p>
+                    <p className="text-xs text-gray-500 font-epilogue leading-relaxed">
+                      {item.details}
+                    </p>
+                  </div>
+
+                  {/* Exemples */}
+                  <div>
+                    <p className="text-xs font-medium text-gray-500 font-epilogue uppercase tracking-wide mb-3 text-center">
+                      Exemples acceptés
+                    </p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {item.examples.map((example, i) => (
+                        <span
+                          key={i}
+                          className="text-xs px-3 py-2 bg-white text-gray-700 rounded font-epilogue border border-gray-200 text-center"
+                        >
+                          {example}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               ))}
+            </div>
+
+            {/* Processus d'adhésion */}
+            <div className="bg-gray-50 p-8 rounded-2xl">
+              <h4 className="text-xl font-medium text-black font-ca-slalom mb-6 text-center">
+                Processus d'adhésion
+              </h4>
+              <div className="grid md:grid-cols-4 gap-6">
+                {[
+                  {
+                    step: "1",
+                    title: "Candidature",
+                    description: "Remplissez le formulaire de candidature en ligne avec votre profil",
+                    duration: "5 min"
+                },
+                  {
+                    step: "2", 
+                    title: "Évaluation",
+                    description: "Notre équipe évalue votre profil selon nos 3 critères d'adhésion",
+                    duration: "48h"
+                  },
+                  {
+                    step: "3",
+                    title: "Entretien",
+                    description: "Échange informel avec un membre du bureau pour faire connaissance",
+                    duration: "30 min"
+                  },
+                  {
+                    step: "4",
+                    title: "Intégration",
+                    description: "Accueil dans la communauté et invitation aux prochains événements",
+                    duration: "Immédiat"
+                  }
+                ].map((process, index) => (
+                  <div key={index} className="text-center">
+                    <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white font-medium font-epilogue">
+                        {process.step}
+                      </span>
+                    </div>
+                    <h5 className="font-medium text-black font-ca-slalom mb-2">
+                      {process.title}
+                    </h5>
+                    <p className="text-sm text-gray-600 font-epilogue mb-2">
+                      {process.description}
+                    </p>
+                    <span className="text-xs text-gray-500 font-epilogue">
+                      {process.duration}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Call to action */}
+            <div className="text-center mt-8">
+              <p className="text-sm text-gray-600 font-epilogue mb-4">
+                Vous remplissez ces critères et souhaitez rejoindre l'aventure ?
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="px-6 py-3 bg-black text-white rounded-lg font-epilogue hover:bg-gray-800 transition-colors">
+                  Postuler maintenant
+                </button>
+                <button className="px-6 py-3 border border-gray-300 text-black rounded-lg font-epilogue hover:bg-gray-50 transition-colors">
+                  En savoir plus
+                </button>
+              </div>
             </div>
           </motion.div>
         </Container>
