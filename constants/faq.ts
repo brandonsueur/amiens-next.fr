@@ -1,4 +1,4 @@
-interface FAQItem {
+export interface FAQItem {
   id: string;
   question: string;
   answer: string | string[] | React.ReactElement;
@@ -185,6 +185,3 @@ export const servicesFaqData: FAQItem[] = [
       "Oui, nous disposons d'un annuaire privé permettant aux membres de se retrouver facilement et d'identifier les bonnes compétences pour leurs projets.",
   },
 ];
-
-// Export des types pour réutilisation
-export type { FAQItem };
