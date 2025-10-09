@@ -78,6 +78,40 @@ export const collectifFaqData: FAQItem[] = [
   },
 ];
 
+// Questions pour la page Blog
+export const blogFaqData: FAQItem[] = [
+  {
+    id: "blog-1",
+    question: "À quelle fréquence publiez-vous de nouveaux articles ?",
+    answer:
+      "Nous publions 2 à 3 nouveaux articles par mois. Notre calendrier éditorial suit l'actualité entrepreneuriale amiénoise et les retours de notre communauté.",
+  },
+  {
+    id: "blog-2",
+    question: "Puis-je proposer un article pour le blog ?",
+    answer:
+      "Absolument ! Nous encourageons les contributions des membres du collectif. Si vous avez une expertise à partager ou une expérience inspirante, contactez-nous avec votre proposition.",
+  },
+  {
+    id: "blog-3",
+    question: "Comment recevoir les nouveaux articles ?",
+    answer:
+      "Vous pouvez vous abonner à notre newsletter en bas de cette page ou nous suivre sur nos réseaux sociaux. Nous partageons aussi nos articles dans notre communauté Slack.",
+  },
+  {
+    id: "blog-4",
+    question: "Les articles sont-ils réservés aux membres ?",
+    answer:
+      "Non, notre blog est entièrement gratuit et accessible à tous. C'est notre contribution à l'écosystème entrepreneurial amiénois au sens large.",
+  },
+  {
+    id: "blog-5",
+    question: "Quel type de contenu trouvé sur le blog ?",
+    answer:
+      "Nous publions des guides pratiques, des analyses de marché local, des portraits d'entrepreneurs, des retours d'événements et des conseils pour développer son business à Amiens.",
+  },
+];
+
 // Questions pour la page Événements
 export const evenementsFaqData: FAQItem[] = [
   {
