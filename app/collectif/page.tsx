@@ -360,26 +360,65 @@ export default function CollectifPage() {
               className="text-md text-black font-epilogue max-w-3xl mx-auto"
             >
               Des rencontres régulières pour échanger, apprendre et grandir
-              ensemble
+              ensemble dans un cadre professionnel et convivial
             </motion.p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
                 title: "Matinales Business",
                 description:
-                  "Petit-déjeuners mensuels pour échanger sur vos projets et actualités dans une ambiance détendue.",
+                  "Petit-déjeuners mensuels dans des lieux inspirants d'Amiens pour démarrer la journée avec de nouvelles rencontres",
+                frequency: "1er jeudi du mois",
+                duration: "1h30",
+                time: "8h00 - 9h30",
+                location: "Lieux rotatifs",
+                capacity: "25 participants",
+                format: "Networking libre + pitch express",
+                icon: "☀️",
+                benefits: [
+                  "Démarrer la journée avec énergie",
+                  "Rencontres qualitatives",
+                  "Échanges de bonnes pratiques",
+                  "Partenariats business",
+                ],
               },
               {
-                title: "Afterworks",
+                title: "Afterworks Networking",
                 description:
-                  "Soirées networking conviviales pour développer votre réseau et créer des collaborations.",
+                  "Soirées conviviales pour développer son réseau dans une ambiance détendue après le travail",
+                frequency: "3ème jeudi du mois",
+                duration: "2h00",
+                time: "18h30 - 20h30",
+                location: "Bars & rooftops",
+                capacity: "40 participants",
+                format: "Cocktail + icebreakers",
+                icon: "🍸",
+                benefits: [
+                  "Détente après le travail",
+                  "Networking informel",
+                  "Découverte de lieux",
+                  "Collaborations créatives",
+                ],
               },
               {
                 title: "Talks Inspirants",
                 description:
-                  "Conférences avec des entrepreneurs locaux et nationaux pour partager expériences et conseils.",
+                  "Conférences avec des entrepreneurs expérimentés pour partager retours d'expérience et conseils stratégiques",
+                frequency: "Trimestriel",
+                duration: "2h30",
+                time: "19h00 - 21h30",
+                location: "Auditoriums",
+                capacity: "80 participants",
+                format: "Conférence + Q&A + networking",
+                icon: "🎤",
+                benefits: [
+                  "Inspiration & motivation",
+                  "Apprentissages concrets",
+                  "Retours d'expérience",
+                  "Vision long terme",
+                ],
               },
             ].map((event, index) => (
               <motion.div
@@ -387,17 +426,136 @@ export default function CollectifPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                className="bg-gray-50 p-8 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
               >
-                <h3 className="text-xl font-medium text-black mb-3 font-ca-slalom">
-                  {event.title}
-                </h3>
-                <p className="text-black font-epilogue leading-relaxed">
-                  {event.description}
-                </p>
+                <div className="text-center mb-6">
+                  <span className="text-4xl mb-4 block">{event.icon}</span>
+                  <h3 className="text-xl font-medium text-black mb-3 font-ca-slalom">
+                    {event.title}
+                  </h3>
+                  <p className="text-gray-600 font-epilogue text-sm leading-relaxed mb-6">
+                    {event.description}
+                  </p>
+                </div>
+
+                {/* Infos pratiques */}
+                <div className="space-y-3 mb-6">
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-gray-500 font-epilogue">
+                      Fréquence :
+                    </span>
+                    <span className="text-black font-epilogue font-medium">
+                      {event.frequency}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-gray-500 font-epilogue">
+                      Horaires :
+                    </span>
+                    <span className="text-black font-epilogue font-medium">
+                      {event.time}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-gray-500 font-epilogue">Lieu :</span>
+                    <span className="text-black font-epilogue font-medium">
+                      {event.location}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-gray-500 font-epilogue">
+                      Participants :
+                    </span>
+                    <span className="text-black font-epilogue font-medium">
+                      {event.capacity}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Format */}
+                <div className="mb-6">
+                  <p className="text-xs font-medium text-gray-500 font-epilogue uppercase tracking-wide mb-2">
+                    Format
+                  </p>
+                  <span className="text-xs px-3 py-1 bg-white text-gray-700 rounded-full font-epilogue border border-gray-200">
+                    {event.format}
+                  </span>
+                </div>
+
+                {/* Bénéfices */}
+                <div>
+                  <p className="text-xs font-medium text-gray-500 font-epilogue uppercase tracking-wide mb-3">
+                    Bénéfices
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {event.benefits.map((benefit, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-2 py-1 bg-white text-gray-700 rounded font-epilogue border border-gray-200 text-center"
+                      >
+                        {benefit}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Événements spéciaux */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-16 max-w-4xl mx-auto"
+          >
+            <h3 className="text-2xl font-medium text-black mb-8 font-ca-slalom text-center">
+              Événements spéciaux
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Soirée de Gala Annuelle",
+                  description:
+                    "Grande soirée de networking avec remise de prix aux entrepreneurs de l'année",
+                  frequency: "Annuel - Décembre",
+                },
+                {
+                  title: "Ateliers Thématiques",
+                  description:
+                    "Sessions de formation sur des sujets business : financement, marketing, juridique...",
+                  frequency: "Selon les besoins",
+                },
+                {
+                  title: "Journée Portes Ouvertes",
+                  description:
+                    "Découverte du collectif pour les nouveaux entrepreneurs interessés",
+                  frequency: "Semestriel",
+                },
+                {
+                  title: "Challenges & Concours",
+                  description:
+                    "Concours de pitch, hackathons, défis créatifs entre membres",
+                  frequency: "Ponctuel",
+                },
+              ].map((event, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-200 p-6 rounded-xl"
+                >
+                  <h4 className="font-medium text-black font-ca-slalom mb-2">
+                    {event.title}
+                  </h4>
+                  <p className="text-sm text-gray-600 font-epilogue mb-3">
+                    {event.description}
+                  </p>
+                  <span className="text-xs text-gray-500 font-epilogue">
+                    {event.frequency}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </Container>
       </section>
 
