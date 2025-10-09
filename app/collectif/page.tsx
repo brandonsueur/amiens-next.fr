@@ -139,31 +139,72 @@ export default function CollectifPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-md text-black font-epilogue max-w-3xl mx-auto"
             >
-              Les principes qui guident notre communauté au quotidien
+              Les principes fondamentaux qui guident notre communauté et
+              définissent notre identité entrepreneuriale
             </motion.p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
-                title: "Communauté",
+                title: "Esprit Communauté",
                 description:
-                  "Une communauté bienveillante d'entrepreneurs qui s'entraident et partagent leurs expériences.",
+                  "Une communauté bienveillante où chaque entrepreneur trouve sa place et peut s'épanouir",
+                details:
+                  "Nous croyons en la force du collectif et en l'importance de créer des liens durables entre entrepreneurs",
+                actions: [
+                  "Entraide entre membres",
+                  "Partage d'expériences",
+                  "Soutien mutuel",
+                  "Événements conviviaux",
+                ],
+                icon: "🤝",
+                motto: "Ensemble, nous sommes plus forts",
               },
               {
-                title: "Ambition",
+                title: "Ambition Territoriale",
                 description:
-                  "L'ambition de faire d'Amiens un territoire d'innovation et d'entrepreneuriat reconnu.",
+                  "L'ambition de faire rayonner Amiens comme un territoire d'innovation et d'entrepreneuriat",
+                details:
+                  "Nous œuvrons pour positionner notre région comme un écosystème entrepreneurial dynamique et attractif",
+                actions: [
+                  "Valorisation locale",
+                  "Attraction de talents",
+                  "Rayonnement régional",
+                  "Écosystème innovant",
+                ],
+                icon: "🚀",
+                motto: "Amiens, territoire d'entrepreneurs",
               },
               {
-                title: "Authenticité",
+                title: "Authenticité & Transparence",
                 description:
-                  "Des échanges sincères et authentiques, loin des codes du networking traditionnel.",
+                  "Des échanges sincères et authentiques, loin des codes du networking traditionnel superficiel",
+                details:
+                  "Nous privilégions la qualité des relations à la quantité, dans un esprit de transparence et de bienveillance",
+                actions: [
+                  "Échanges sincères",
+                  "Relations durables",
+                  "Transparence totale",
+                  "Bienveillance active",
+                ],
+                icon: "💎",
+                motto: "Vraies personnes, vrais échanges",
               },
               {
-                title: "Entraide",
+                title: "Collaboration Creative",
                 description:
-                  "L'entraide et la collaboration avant la compétition, pour grandir ensemble.",
+                  "L'entraide et la collaboration avant la compétition, pour grandir et innover ensemble",
+                details:
+                  "Nous favorisons les synergies et les partenariats créatifs entre membres aux profils complémentaires",
+                actions: [
+                  "Partenariats business",
+                  "Projets collaboratifs",
+                  "Synergies créatives",
+                  "Innovation collective",
+                ],
+                icon: "⚡",
+                motto: "Collaborer pour mieux innover",
               },
             ].map((value, index) => (
               <motion.div
@@ -171,17 +212,96 @@ export default function CollectifPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                className="bg-gray-50 p-8 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
               >
-                <h3 className="text-xl font-medium text-black mb-3 font-ca-slalom">
-                  {value.title}
-                </h3>
-                <p className="text-black font-epilogue leading-relaxed">
-                  {value.description}
-                </p>
+                <div className="text-center mb-6">
+                  <span className="text-4xl mb-4 block">{value.icon}</span>
+                  <h3 className="text-xl font-medium text-black mb-3 font-ca-slalom">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-600 font-epilogue text-sm leading-relaxed mb-4">
+                    {value.description}
+                  </p>
+                  <p className="text-gray-500 font-epilogue text-xs leading-relaxed">
+                    {value.details}
+                  </p>
+                </div>
+
+                {/* Motto */}
+                <div className="text-center mb-6">
+                  <span className="text-xs px-4 py-2 bg-white text-gray-700 rounded-full font-epilogue border border-gray-200 italic">
+                    "{value.motto}"
+                  </span>
+                </div>
+
+                {/* Actions concrètes */}
+                <div>
+                  <p className="text-xs font-medium text-gray-500 font-epilogue uppercase tracking-wide mb-3 text-center">
+                    Concrètement
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {value.actions.map((action, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-3 py-2 bg-white text-gray-700 rounded font-epilogue border border-gray-200 text-center"
+                      >
+                        {action}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Nos engagements */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-16 max-w-4xl mx-auto"
+          >
+            <h3 className="text-2xl font-medium text-black mb-8 font-ca-slalom text-center">
+              Nos engagements
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Inclusion & Diversité",
+                  description:
+                    "Tous les profils entrepreneuriaux sont les bienvenus, sans distinction",
+                  commitment: "0 discrimination",
+                },
+                {
+                  title: "Qualité avant Quantité",
+                  description:
+                    "Nous privilégions des événements de qualité avec des participants engagés",
+                  commitment: "Événements sélectifs",
+                },
+                {
+                  title: "Impact Local Positif",
+                  description:
+                    "Chaque action vise à renforcer l'écosystème entrepreneurial amiénois",
+                  commitment: "Développement territorial",
+                },
+              ].map((engagement, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-200 p-6 rounded-xl text-center"
+                >
+                  <h4 className="font-medium text-black font-ca-slalom mb-3">
+                    {engagement.title}
+                  </h4>
+                  <p className="text-sm text-gray-600 font-epilogue mb-4">
+                    {engagement.description}
+                  </p>
+                  <span className="text-xs px-3 py-1 bg-gray-100 text-gray-700 rounded-full font-epilogue">
+                    {engagement.commitment}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </Container>
       </section>
 
@@ -429,7 +549,7 @@ export default function CollectifPage() {
                 className="bg-gray-50 p-8 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
               >
                 <div className="text-center mb-6">
-                  <span className="text-4xl mb-4 block">{event.icon}</span>
+                  {/* <span className="text-4xl mb-4 block">{event.icon}</span> */}
                   <h3 className="text-xl font-medium text-black mb-3 font-ca-slalom">
                     {event.title}
                   </h3>
@@ -456,20 +576,20 @@ export default function CollectifPage() {
                       {event.time}
                     </span>
                   </div>
-                  <div className="flex justify-between items-center text-sm">
+                  {/* <div className="flex justify-between items-center text-sm">
                     <span className="text-gray-500 font-epilogue">Lieu :</span>
                     <span className="text-black font-epilogue font-medium">
                       {event.location}
                     </span>
-                  </div>
-                  <div className="flex justify-between items-center text-sm">
+                  </div> */}
+                  {/* <div className="flex justify-between items-center text-sm">
                     <span className="text-gray-500 font-epilogue">
                       Participants :
                     </span>
                     <span className="text-black font-epilogue font-medium">
                       {event.capacity}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Format */}
@@ -501,61 +621,6 @@ export default function CollectifPage() {
               </motion.div>
             ))}
           </div>
-
-          {/* Événements spéciaux */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 max-w-4xl mx-auto"
-          >
-            <h3 className="text-2xl font-medium text-black mb-8 font-ca-slalom text-center">
-              Événements spéciaux
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: "Soirée de Gala Annuelle",
-                  description:
-                    "Grande soirée de networking avec remise de prix aux entrepreneurs de l'année",
-                  frequency: "Annuel - Décembre",
-                },
-                {
-                  title: "Ateliers Thématiques",
-                  description:
-                    "Sessions de formation sur des sujets business : financement, marketing, juridique...",
-                  frequency: "Selon les besoins",
-                },
-                {
-                  title: "Journée Portes Ouvertes",
-                  description:
-                    "Découverte du collectif pour les nouveaux entrepreneurs interessés",
-                  frequency: "Semestriel",
-                },
-                {
-                  title: "Challenges & Concours",
-                  description:
-                    "Concours de pitch, hackathons, défis créatifs entre membres",
-                  frequency: "Ponctuel",
-                },
-              ].map((event, index) => (
-                <div
-                  key={index}
-                  className="border border-gray-200 p-6 rounded-xl"
-                >
-                  <h4 className="font-medium text-black font-ca-slalom mb-2">
-                    {event.title}
-                  </h4>
-                  <p className="text-sm text-gray-600 font-epilogue mb-3">
-                    {event.description}
-                  </p>
-                  <span className="text-xs text-gray-500 font-epilogue">
-                    {event.frequency}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </Container>
       </section>
 
