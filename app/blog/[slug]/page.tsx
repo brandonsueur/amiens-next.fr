@@ -22,10 +22,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <Layout>
       <Container className="mt-52 z-10">
         <div className="max-w-4xl mx-auto">
-          <Link href="/blog" className="inline-flex items-center text-gray-600 hover:text-black mb-8 font-epilogue">
+          <Link
+            href="/blog"
+            className="inline-flex items-center text-gray-600 hover:text-black mb-8 font-epilogue"
+          >
             ← Retour au blog
           </Link>
-          
+
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-xs px-3 py-1 bg-black text-white rounded-full font-epilogue">
@@ -35,19 +38,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.date} • {post.readTime}
               </span>
             </div>
-            
+
             <h1 className="text-4xl lg:text-5xl font-medium text-black mb-6 font-ca-slalom leading-tight">
               {post.title}
             </h1>
-            
+
             <p className="text-xl text-gray-600 font-epilogue leading-relaxed mb-8">
               {post.excerpt}
             </p>
-            
+
             <div className="flex items-center gap-4 pb-8 border-b border-gray-200">
               <div>
-                <p className="font-medium text-black font-epilogue">Par {post.author}</p>
-                <p className="text-sm text-gray-500 font-epilogue">Publié le {post.date}</p>
+                <p className="font-medium text-black font-epilogue">
+                  Par {post.author}
+                </p>
+                <p className="text-sm text-gray-500 font-epilogue">
+                  Publié le {post.date}
+                </p>
               </div>
             </div>
           </div>
@@ -56,7 +63,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <Container>
         <div className="max-w-3xl mx-auto">
-          <article 
+          <article
             className="prose prose-lg max-w-none font-epilogue"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
@@ -96,7 +103,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
   const post = await getPostBySlug(params.slug);
-  
+
   if (!post) {
     return {
       title: "Article non trouvé - Amiens Next",
