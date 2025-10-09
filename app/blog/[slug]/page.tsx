@@ -13,7 +13,8 @@ const blogArticles = {
   "entrepreneuriat-amiens-2024": {
     id: "entrepreneuriat-amiens-2024",
     title: "L'entrepreneuriat à Amiens en 2024 : bilan et perspectives",
-    excerpt: "Retour sur une année riche en innovations et projets entrepreneuriaux dans la métropole amiénoise. Découvrez les tendances et opportunités pour 2025.",
+    excerpt:
+      "Retour sur une année riche en innovations et projets entrepreneuriaux dans la métropole amiénoise. Découvrez les tendances et opportunités pour 2025.",
     content: `
 # L'entrepreneuriat à Amiens en 2024 : bilan et perspectives
 
@@ -94,13 +95,14 @@ L'aventure ne fait que commencer, et nous avons hâte de vous accompagner dans c
     featured: true,
     relatedArticles: [
       "guide-freelance-amiens",
-      "financement-startup-hauts-de-france"
-    ]
+      "financement-startup-hauts-de-france",
+    ],
   },
   "guide-freelance-amiens": {
     id: "guide-freelance-amiens",
     title: "Guide du freelance à Amiens : où travailler et réseauter ?",
-    excerpt: "Les meilleurs espaces de coworking, cafés wifi et lieux de networking pour les freelances amiénois. Notre sélection testée et approuvée.",
+    excerpt:
+      "Les meilleurs espaces de coworking, cafés wifi et lieux de networking pour les freelances amiénois. Notre sélection testée et approuvée.",
     content: `
 # Guide du freelance à Amiens : où travailler et réseauter ?
 
@@ -224,16 +226,16 @@ Besoin de conseils personnalisés ? N'hésitez pas à nous contacter ou à rejoi
 *Guide mis à jour en décembre 2024. Tarifs et informations susceptibles d'évoluer.*
     `,
     author: "Marie Dupont",
-    date: "8 décembre 2024", 
+    date: "8 décembre 2024",
     readTime: "7 min",
     category: "Pratique",
     image: "/img/blog/freelance-guide.jpg",
     featured: false,
     relatedArticles: [
       "reussir-networking-amiens",
-      "entrepreneuriat-amiens-2024"
-    ]
-  }
+      "entrepreneuriat-amiens-2024",
+    ],
+  },
 };
 
 interface BlogPageProps {
@@ -268,15 +270,15 @@ export default function BlogArticlePage({ params }: BlogPageProps) {
                 {article.date} • {article.readTime}
               </span>
             </div>
-            
+
             <h1 className="text-3xl lg:text-4xl font-medium text-black mb-6 font-ca-slalom leading-tight">
               {article.title}
             </h1>
-            
+
             <p className="text-lg text-gray-600 font-epilogue leading-relaxed mb-8 max-w-2xl mx-auto">
               {article.excerpt}
             </p>
-            
+
             <div className="flex items-center justify-center gap-4 text-sm text-gray-500 font-epilogue">
               <span>Par {article.author}</span>
             </div>
@@ -301,39 +303,56 @@ export default function BlogArticlePage({ params }: BlogPageProps) {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="prose prose-lg max-w-none"
           >
-            <div 
+            <div
               className="article-content font-epilogue leading-relaxed"
-              dangerouslySetInnerHTML={{ 
+              dangerouslySetInnerHTML={{
                 __html: article.content
-                  .split('\n')
-                  .map(line => {
-                    if (line.startsWith('# ')) {
-                      return `<h1 class="text-2xl lg:text-3xl font-medium text-black mb-6 font-ca-slalom">${line.slice(2)}</h1>`;
+                  .split("\n")
+                  .map((line) => {
+                    if (line.startsWith("# ")) {
+                      return `<h1 class="text-2xl lg:text-3xl font-medium text-black mb-6 font-ca-slalom">${line.slice(
+                        2
+                      )}</h1>`;
                     }
-                    if (line.startsWith('## ')) {
-                      return `<h2 class="text-xl lg:text-2xl font-medium text-black mb-4 mt-8 font-ca-slalom">${line.slice(3)}</h2>`;
+                    if (line.startsWith("## ")) {
+                      return `<h2 class="text-xl lg:text-2xl font-medium text-black mb-4 mt-8 font-ca-slalom">${line.slice(
+                        3
+                      )}</h2>`;
                     }
-                    if (line.startsWith('### ')) {
-                      return `<h3 class="text-lg lg:text-xl font-medium text-black mb-3 mt-6 font-ca-slalom">${line.slice(4)}</h3>`;
+                    if (line.startsWith("### ")) {
+                      return `<h3 class="text-lg lg:text-xl font-medium text-black mb-3 mt-6 font-ca-slalom">${line.slice(
+                        4
+                      )}</h3>`;
                     }
-                    if (line.startsWith('**') && line.endsWith('**')) {
-                      return `<p class="font-semibold text-black mb-4">${line.slice(2, -2)}</p>`;
+                    if (line.startsWith("**") && line.endsWith("**")) {
+                      return `<p class="font-semibold text-black mb-4">${line.slice(
+                        2,
+                        -2
+                      )}</p>`;
                     }
-                    if (line.startsWith('- ')) {
-                      return `<li class="text-gray-700 mb-2">${line.slice(2)}</li>`;
+                    if (line.startsWith("- ")) {
+                      return `<li class="text-gray-700 mb-2">${line.slice(
+                        2
+                      )}</li>`;
                     }
-                    if (line.trim() === '') {
-                      return '<br>';
+                    if (line.trim() === "") {
+                      return "<br>";
                     }
-                    if (line.startsWith('*') && line.endsWith('*')) {
-                      return `<p class="text-sm text-gray-500 italic mb-4">${line.slice(1, -1)}</p>`;
+                    if (line.startsWith("*") && line.endsWith("*")) {
+                      return `<p class="text-sm text-gray-500 italic mb-4">${line.slice(
+                        1,
+                        -1
+                      )}</p>`;
                     }
-                    if (line.includes('**') && !line.startsWith('**')) {
-                      return `<p class="text-gray-700 mb-4">${line.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-black">$1</strong>')}</p>`;
+                    if (line.includes("**") && !line.startsWith("**")) {
+                      return `<p class="text-gray-700 mb-4">${line.replace(
+                        /\*\*(.*?)\*\*/g,
+                        '<strong class="font-semibold text-black">$1</strong>'
+                      )}</p>`;
                     }
                     return `<p class="text-gray-700 mb-4">${line}</p>`;
                   })
-                  .join('')
+                  .join(""),
               }}
             />
           </motion.article>
@@ -345,20 +364,16 @@ export default function BlogArticlePage({ params }: BlogPageProps) {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-12 mt-12 border-t border-gray-200"
           >
-            <Link 
-              href="/blog" 
+            <Link
+              href="/blog"
               className="flex items-center gap-2 text-black hover:text-gray-600 transition-colors font-epilogue"
             >
               ← Retour au blog
             </Link>
-            
+
             <div className="flex gap-4">
-              <Button variant="outline">
-                Partager l'article
-              </Button>
-              <Button>
-                Rejoindre le collectif
-              </Button>
+              <Button variant="outline">Partager l'article</Button>
+              <Button>Rejoindre le collectif</Button>
             </div>
           </motion.div>
         </div>
@@ -372,12 +387,13 @@ export default function BlogArticlePage({ params }: BlogPageProps) {
               <h2 className="text-2xl font-medium text-black mb-8 font-ca-slalom text-center">
                 Articles similaires
               </h2>
-              
+
               <div className="grid md:grid-cols-2 gap-8">
                 {article.relatedArticles.map((relatedSlug, index) => {
-                  const relatedArticle = blogArticles[relatedSlug as keyof typeof blogArticles];
+                  const relatedArticle =
+                    blogArticles[relatedSlug as keyof typeof blogArticles];
                   if (!relatedArticle) return null;
-                  
+
                   return (
                     <motion.article
                       key={relatedSlug}
@@ -388,10 +404,12 @@ export default function BlogArticlePage({ params }: BlogPageProps) {
                     >
                       <div className="relative h-48 bg-gray-200">
                         <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                          <span className="text-gray-500 font-epilogue text-sm">Image à venir</span>
+                          <span className="text-gray-500 font-epilogue text-sm">
+                            Image à venir
+                          </span>
                         </div>
                       </div>
-                      
+
                       <div className="p-6">
                         <div className="flex items-center gap-3 mb-3">
                           <span className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full font-epilogue">
@@ -401,17 +419,20 @@ export default function BlogArticlePage({ params }: BlogPageProps) {
                             {relatedArticle.readTime}
                           </span>
                         </div>
-                        
+
                         <h3 className="text-lg font-medium text-black mb-3 font-ca-slalom line-clamp-2">
                           {relatedArticle.title}
                         </h3>
-                        
+
                         <p className="text-sm text-gray-600 font-epilogue leading-relaxed mb-4 line-clamp-2">
                           {relatedArticle.excerpt}
                         </p>
-                        
+
                         <Link href={`/blog/${relatedSlug}`}>
-                          <Button variant="outline" className="text-sm w-full flex items-center justify-center gap-2">
+                          <Button
+                            variant="outline"
+                            className="text-sm w-full flex items-center justify-center gap-2"
+                          >
                             Lire l'article
                             <ArrowRight />
                           </Button>

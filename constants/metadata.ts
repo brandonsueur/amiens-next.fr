@@ -46,7 +46,8 @@ export const metadata: Metadata = {
 // Métadonnées spécifiques pour la page Blog
 export const blogMetadata: Metadata = {
   title: `Blog - ${project.siteName}`,
-  description: "Conseils entrepreneuriaux, analyses de marché et portraits d'entrepreneurs amiénois. Découvrez les ressources pour développer votre business à Amiens.",
+  description:
+    "Conseils entrepreneuriaux, analyses de marché et portraits d'entrepreneurs amiénois. Découvrez les ressources pour développer votre business à Amiens.",
   keywords: [
     ...project.keywords,
     "blog entrepreneurial",
@@ -54,19 +55,21 @@ export const blogMetadata: Metadata = {
     "entrepreneuriat Hauts-de-France",
     "networking Amiens",
     "financement startup",
-    "guides entrepreneur"
+    "guides entrepreneur",
   ],
   openGraph: {
     title: `Blog - ${project.siteName}`,
-    description: "Conseils entrepreneuriaux, analyses de marché et portraits d'entrepreneurs amiénois.",
+    description:
+      "Conseils entrepreneuriaux, analyses de marché et portraits d'entrepreneurs amiénois.",
     url: `${project.url}/blog`,
     siteName: project.siteName,
-    locale: "fr_FR", 
+    locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: `Blog - ${project.siteName}`,
-    description: "Conseils entrepreneuriaux, analyses de marché et portraits d'entrepreneurs amiénois.",
+    description:
+      "Conseils entrepreneuriaux, analyses de marché et portraits d'entrepreneurs amiénois.",
   },
 };
