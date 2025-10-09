@@ -431,7 +431,9 @@ export default function CollectifPage() {
                 Nos critères d'adhésion
               </h3>
               <p className="text-gray-600 font-epilogue max-w-2xl mx-auto">
-                Rejoindre Amiens Next nécessite de répondre à ces 3 critères fondamentaux qui garantissent la cohésion et la qualité de notre communauté
+                Rejoindre Amiens Next nécessite de répondre à ces 3 critères
+                fondamentaux qui garantissent la cohésion et la qualité de notre
+                communauté
               </p>
             </div>
 
@@ -439,30 +441,54 @@ export default function CollectifPage() {
               {[
                 {
                   criterion: "Esprit Entrepreneurial",
-                  description: "Avoir un projet, une entreprise ou une activité entrepreneuriale active ou en développement",
-                  details: "Que vous soyez en phase d'idéation, de lancement ou de développement, l'important est d'avoir une démarche entrepreneuriale",
-                  examples: ["Entreprise en activité", "Projet en cours", "Freelance actif", "Startup en création"],
+                  description:
+                    "Avoir un projet, une entreprise ou une activité entrepreneuriale active ou en développement",
+                  details:
+                    "Que vous soyez en phase d'idéation, de lancement ou de développement, l'important est d'avoir une démarche entrepreneuriale",
+                  examples: [
+                    "Entreprise en activité",
+                    "Projet en cours",
+                    "Freelance actif",
+                    "Startup en création",
+                  ],
                   icon: "💡",
-                  requirement: "Obligatoire"
+                  requirement: "Obligatoire",
                 },
                 {
                   criterion: "Ancrage Territorial",
-                  description: "Être basé à Amiens, dans la métropole ou dans un rayon de 50km maximum",
-                  details: "Notre focus est de développer l'écosystème local amiénois et de créer des synergies de proximité",
-                  examples: ["Amiens centre", "Métropole amiénoise", "Somme (80)", "Dans un rayon de 50km"],
+                  description:
+                    "Être basé à Amiens, dans la métropole ou dans un rayon de 50km maximum",
+                  details:
+                    "Notre focus est de développer l'écosystème local amiénois et de créer des synergies de proximité",
+                  examples: [
+                    "Amiens centre",
+                    "Métropole amiénoise",
+                    "Somme (80)",
+                    "Dans un rayon de 50km",
+                  ],
                   icon: "📍",
-                  requirement: "Obligatoire"
+                  requirement: "Obligatoire",
                 },
                 {
                   criterion: "Esprit Collectif",
-                  description: "Partager nos valeurs de collaboration, d'entraide et de bienveillance entrepreneuriale",
-                  details: "Nous recherchons des entrepreneurs qui privilégient la collaboration à la compétition et l'entraide au profit personnel",
-                  examples: ["Mindset collaboratif", "Esprit d'entraide", "Bienveillance", "Partage d'expérience"],
+                  description:
+                    "Partager nos valeurs de collaboration, d'entraide et de bienveillance entrepreneuriale",
+                  details:
+                    "Nous recherchons des entrepreneurs qui privilégient la collaboration à la compétition et l'entraide au profit personnel",
+                  examples: [
+                    "Mindset collaboratif",
+                    "Esprit d'entraide",
+                    "Bienveillance",
+                    "Partage d'expérience",
+                  ],
                   icon: "🤲",
-                  requirement: "Essentiel"
+                  requirement: "Essentiel",
                 },
               ].map((item, index) => (
-                <div key={index} className="bg-gray-50 p-8 rounded-2xl hover:bg-gray-100 transition-colors duration-300">
+                <div
+                  key={index}
+                  className="bg-gray-50 p-8 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
+                >
                   <div className="text-center mb-6">
                     <span className="text-4xl mb-4 block">{item.icon}</span>
                     <div className="flex items-center justify-center gap-2 mb-3">
@@ -504,34 +530,34 @@ export default function CollectifPage() {
             {/* Processus d'adhésion */}
             <div className="bg-gray-50 p-8 rounded-2xl">
               <h4 className="text-xl font-medium text-black font-ca-slalom mb-6 text-center">
-                Processus d'adhésion
+                Comment rejoindre le collectif ?
               </h4>
-              <div className="grid md:grid-cols-4 gap-6">
+              <div className="grid md:grid-cols-3 gap-8">
                 {[
                   {
                     step: "1",
-                    title: "Candidature",
-                    description: "Remplissez le formulaire de candidature en ligne avec votre profil",
-                    duration: "5 min"
-                },
+                    title: "Premier contact",
+                    description:
+                      "Prenez contact via nos réseaux sociaux ou par email pour vous présenter",
+                    action: "Message simple",
+                    duration: "2 min",
+                  },
                   {
-                    step: "2", 
-                    title: "Évaluation",
-                    description: "Notre équipe évalue votre profil selon nos 3 critères d'adhésion",
-                    duration: "48h"
+                    step: "2",
+                    title: "Café découverte",
+                    description:
+                      "Rencontre informelle autour d'un café pour faire connaissance et échanger sur vos projets",
+                    action: "Échange libre",
+                    duration: "45 min",
                   },
                   {
                     step: "3",
-                    title: "Entretien",
-                    description: "Échange informel avec un membre du bureau pour faire connaissance",
-                    duration: "30 min"
+                    title: "Intégration naturelle",
+                    description:
+                      "Invitation au prochain événement et intégration progressive dans la communauté",
+                    action: "Premier événement",
+                    duration: "Immédiat",
                   },
-                  {
-                    step: "4",
-                    title: "Intégration",
-                    description: "Accueil dans la communauté et invitation aux prochains événements",
-                    duration: "Immédiat"
-                  }
                 ].map((process, index) => (
                   <div key={index} className="text-center">
                     <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
@@ -539,32 +565,58 @@ export default function CollectifPage() {
                         {process.step}
                       </span>
                     </div>
-                    <h5 className="font-medium text-black font-ca-slalom mb-2">
+                    <h5 className="font-medium text-black font-ca-slalom mb-3">
                       {process.title}
                     </h5>
-                    <p className="text-sm text-gray-600 font-epilogue mb-2">
+                    <p className="text-sm text-gray-600 font-epilogue mb-3">
                       {process.description}
                     </p>
-                    <span className="text-xs text-gray-500 font-epilogue">
-                      {process.duration}
-                    </span>
+                    <div className="space-y-1">
+                      <span className="text-xs px-3 py-1 bg-white text-gray-700 rounded-full font-epilogue border border-gray-200">
+                        {process.action}
+                      </span>
+                      <p className="text-xs text-gray-500 font-epilogue mt-2">
+                        {process.duration}
+                      </p>
+                    </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Approche simple */}
+              <div className="mt-8 text-center">
+                <p className="text-sm text-gray-600 font-epilogue mb-4">
+                  <strong>Pas de processus lourd ni de formalités !</strong>
+                  <br />
+                  L'approche est simple : nous privilégions l'humain et les
+                  rencontres authentiques.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 text-xs">
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full font-epilogue">
+                    ✓ Pas de dossier à constituer
+                  </span>
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full font-epilogue">
+                    ✓ Pas d'entretien formel
+                  </span>
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full font-epilogue">
+                    ✓ Intégration progressive
+                  </span>
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full font-epilogue">
+                    ✓ Ambiance décontractée
+                  </span>
+                </div>
               </div>
             </div>
 
             {/* Call to action */}
-            <div className="text-center mt-8">
+            <div className="text-center mt-24">
               <p className="text-sm text-gray-600 font-epilogue mb-4">
                 Vous remplissez ces critères et souhaitez rejoindre l'aventure ?
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-6 py-3 bg-black text-white rounded-lg font-epilogue hover:bg-gray-800 transition-colors">
-                  Postuler maintenant
-                </button>
-                <button className="px-6 py-3 border border-gray-300 text-black rounded-lg font-epilogue hover:bg-gray-50 transition-colors">
-                  En savoir plus
-                </button>
+                <Button>Postuler maintenant</Button>
+
+                <Button variant="outline">En savoir plus</Button>
               </div>
             </div>
           </motion.div>
@@ -670,14 +722,14 @@ export default function CollectifPage() {
 
                 {/* Infos pratiques */}
                 <div className="space-y-3 mb-6">
-                  <div className="flex justify-between items-center text-sm">
+                  {/* <div className="flex justify-between items-center text-sm">
                     <span className="text-gray-500 font-epilogue">
                       Fréquence :
                     </span>
                     <span className="text-black font-epilogue font-medium">
                       {event.frequency}
                     </span>
-                  </div>
+                  </div> */}
                   <div className="flex justify-between items-center text-sm">
                     <span className="text-gray-500 font-epilogue">
                       Horaires :
