@@ -203,27 +203,64 @@ export default function CollectifPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-md text-black font-epilogue max-w-3xl mx-auto"
             >
-              Notre collectif est ouvert à tous les profils entrepreneuriaux
+              Notre collectif rassemble tous les profils entrepreneuriaux qui
+              partagent l'ambition de faire grandir l'écosystème amiénois
             </motion.p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                title: "Freelances",
-                description: "Consultants, créatifs, experts indépendants",
+                title: "Freelances & Consultants",
+                description:
+                  "Experts indépendants, consultants, créatifs digitaux, développeurs, designers, rédacteurs, coaches...",
+                examples: [
+                  "Développeur web",
+                  "Designer UX/UI",
+                  "Consultant marketing",
+                  "Rédacteur",
+                  "Photographe",
+                ],
+                icon: "💻",
               },
               {
-                title: "Startups",
-                description: "Porteurs de projets innovants et disruptifs",
+                title: "Startups & Scale-ups",
+                description:
+                  "Porteurs de projets innovants, fondateurs de startups, entrepreneurs en phase de lancement ou de croissance",
+                examples: [
+                  "Fondateur startup",
+                  "CEO scale-up",
+                  "Porteur de projet",
+                  "Entrepreneur tech",
+                  "Innovateur",
+                ],
+                icon: "🚀",
               },
               {
-                title: "Artisans",
-                description: "Artisans et commerçants de qualité",
+                title: "Artisans & Commerçants",
+                description:
+                  "Artisans créateurs, commerçants engagés, entrepreneurs du secteur traditionnel en mutation digitale",
+                examples: [
+                  "Artisan créateur",
+                  "Commerçant local",
+                  "Chef d'entreprise TPE",
+                  "Entrepreneur local",
+                  "Créateur de produits",
+                ],
+                icon: "🎨",
               },
               {
-                title: "Dirigeants",
-                description: "CEO, fondateurs, gérants d'entreprises",
+                title: "Dirigeants & CEO",
+                description:
+                  "Dirigeants d'entreprises établies, gérants de PME, CEO en quête d'innovation et de développement",
+                examples: [
+                  "CEO PME",
+                  "Directeur général",
+                  "Gérant d'entreprise",
+                  "Entrepreneur senior",
+                  "Leader d'équipe",
+                ],
+                icon: "👔",
               },
             ].map((type, index) => (
               <motion.div
@@ -231,17 +268,76 @@ export default function CollectifPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                className="bg-gray-50 p-8 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
               >
-                <h3 className="text-lg font-medium text-black mb-2 font-ca-slalom">
-                  {type.title}
-                </h3>
-                <p className="text-black font-epilogue text-sm">
-                  {type.description}
-                </p>
+                <div className="text-center mb-6">
+                  <span className="text-4xl mb-4 block">{type.icon}</span>
+                  <h3 className="text-xl font-medium text-black mb-3 font-ca-slalom">
+                    {type.title}
+                  </h3>
+                  <p className="text-gray-600 font-epilogue text-sm leading-relaxed mb-4">
+                    {type.description}
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <p className="text-xs font-medium text-gray-500 font-epilogue uppercase tracking-wide mb-3">
+                    Exemples de profils
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {type.examples.map((example, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-3 py-1 bg-white text-gray-700 rounded-full font-epilogue border border-gray-200"
+                      >
+                        {example}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Critères d'adhésion */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-16 max-w-3xl mx-auto text-center"
+          >
+            <h3 className="text-xl font-medium text-black mb-6 font-ca-slalom">
+              Nos critères d'adhésion
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  criterion: "Esprit entrepreneurial",
+                  description:
+                    "Avoir un projet, une entreprise ou une activité entrepreneuriale",
+                },
+                {
+                  criterion: "Ancrage territorial",
+                  description:
+                    "Être basé à Amiens ou dans les alentours à 1 heure de route",
+                },
+                {
+                  criterion: "Esprit collectif",
+                  description:
+                    "Partager nos valeurs de collaboration et d'entraide",
+                },
+              ].map((item, index) => (
+                <div key={index} className="text-center">
+                  <h4 className="font-medium text-black font-ca-slalom mb-2">
+                    {item.criterion}
+                  </h4>
+                  <p className="text-sm text-gray-600 font-epilogue">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </Container>
       </section>
 
