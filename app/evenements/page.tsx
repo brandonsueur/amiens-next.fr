@@ -4,6 +4,7 @@ import { Layout } from "@/components/layout";
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import { FAQ } from "@/components/faq";
+import { evenementsFaqData } from "@/constants/faq";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -394,7 +395,11 @@ export default function EvenementsPage() {
       </section>
 
       {/* FAQ */}
-      <FAQ />
+      <FAQ
+        questions={evenementsFaqData}
+        title="Questions sur nos événements"
+        subtitle="Tout ce que vous devez savoir sur nos matinales, afterworks et talks pour bien vous préparer"
+      />
 
       {/* Call to Action */}
       <section className="py-16 md:py-24 bg-white">

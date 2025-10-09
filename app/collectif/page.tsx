@@ -5,15 +5,15 @@ import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import { Cards } from "@/components/cards";
 import { FAQ } from "@/components/faq";
+import { collectifFaqData } from "@/constants/faq";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
 
-// Données des statistiques du collectif (même que la home)
+// Données des wstatistiques du collectif (même que la home)
 const collectifStats = [
   {
     id: "membres",
-    title: "120+",
+    title: "15+",
     subtitle: "Membres actifs dans le collectif",
     color: "green" as const,
   },
@@ -78,41 +78,6 @@ export default function CollectifPage() {
           </div>
         </div>
       </Container>
-
-      {/* Section Mission */}
-      <section className="py-16 bg-white">
-        <Container>
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-medium text-black mb-6 font-ca-slalom">
-                Notre Mission
-              </h2>
-              <p className="text-md text-black font-epilogue leading-relaxed max-w-3xl mx-auto">
-                Amiens Next rassemble la nouvelle génération d'entrepreneurs
-                amiénois. Notre mission est de créer un écosystème dynamique où
-                freelances, dirigeants, artisans et startuppers se rencontrent,
-                s'inspirent et collaborent pour faire rayonner notre territoire.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center"
-            >
-              <Link href="#rejoindre">
-                <Button>Rejoindre le collectif</Button>
-              </Link>
-            </motion.div>
-          </div>
-        </Container>
-      </section>
 
       {/* Statistiques avec Cards component */}
       <Cards
@@ -787,7 +752,11 @@ export default function CollectifPage() {
       </section>
 
       {/* FAQ */}
-      <FAQ />
+      <FAQ
+        questions={collectifFaqData}
+        title="Questions sur le collectif"
+        subtitle="Tout ce que vous devez savoir pour mieux comprendre notre communauté et notre fonctionnement"
+      />
 
       {/* Call to Action */}
       <section id="rejoindre" className="py-16 md:py-24 bg-white">

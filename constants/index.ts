@@ -1,3 +1,4 @@
+export * from "./faq";
 export * from "./links";
-export * from "./project";
 export * from "./metadata";
+export * from "./project";

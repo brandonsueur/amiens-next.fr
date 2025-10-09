@@ -3,15 +3,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "../container";
+import { FAQItem } from "@/constants/faq";
 import clsx from "clsx";
 
-interface FAQItem {
-  id: string;
-  question: string;
-  answer: string | string[] | React.ReactElement;
+interface FAQProps {
+  questions?: FAQItem[];
+  title?: string;
+  subtitle?: string;
 }
 
-const faqData: FAQItem[] = [
+// Questions par défaut (pour la page d'accueil)
+const defaultFaqData: FAQItem[] = [
   {
     id: "amiensnext-1",
     question: "Qu’est-ce qu’Amiens Next ?",
@@ -67,7 +69,11 @@ const faqData: FAQItem[] = [
   },
 ];
 
-export function FAQ() {
+export function FAQ({
+  questions = defaultFaqData,
+  title = "Questions fréquentes",
+  subtitle = "Retrouvez ici les réponses aux questions que nos membres nous posent le plus souvent",
+}: FAQProps) {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
   const toggleItem = (id: string) => {
@@ -85,17 +91,14 @@ export function FAQ() {
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-4xl lg:text-4xl font-medium text-gray-900 mb-4">
-            Questions fréquentes
+            {title}
           </h2>
-          <p className="text-md text-gray-600 max-w-3xl mx-auto">
-            Retrouvez ici les réponses aux questions que nos membres nous posent
-            le plus souvent
-          </p>
+          <p className="text-md text-gray-600 max-w-3xl mx-auto">{subtitle}</p>
         </div>
 
         {/* FAQ Items */}
         <div className="max-w-7xl mx-auto space-y-2">
-          {faqData.map((item) => (
+          {questions.map((item) => (
             <div
               key={item.id}
               className={clsx(

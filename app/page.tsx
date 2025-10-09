@@ -1,6 +1,7 @@
 import { Banner, Cards } from "@/components";
 import { Layout } from "@/components/layout";
 import { FAQ } from "@/components";
+import { homeFaqData } from "@/constants/faq";
 
 const cardsData = [
   {
@@ -39,7 +40,11 @@ export default function Home() {
         cards={cardsData}
       />
 
-      <FAQ />
+      <FAQ
+        questions={homeFaqData}
+        title="Questions fréquentes"
+        subtitle="Découvrez tout ce qu'il faut savoir sur Amiens Next et comment nous rejoindre"
+      />
     </Layout>
   );
 }
