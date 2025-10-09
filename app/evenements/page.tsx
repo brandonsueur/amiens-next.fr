@@ -121,8 +121,7 @@ export default function EvenementsPage() {
         <div className="space-x-reverse md:grid md:grid-cols-12 gap-x-8 items-center">
           <div className="md:col-span-12 lg:col-span-7 xl:col-span-7">
             <h1 className="text-4xl font-airbnb text-black lg:text-5xl font-medium leading-12 md:leading-16 mb-4 font-ca-slalom coin-shimmer-responsive">
-              Nos
-              <span className="text-black"> Événements</span>
+              Des événements pour apprendre, échanger et grandir ensemble
             </h1>
 
             <p className="text-md text-black font-epilogue leading-relaxed mb-12 max-w-xl">

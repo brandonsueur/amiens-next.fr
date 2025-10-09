@@ -7,6 +7,7 @@ import { Cards } from "@/components/cards";
 import { FAQ } from "@/components/faq";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 // Données des statistiques du collectif (même que la home)
 const collectifStats = [
@@ -39,81 +40,44 @@ const collectifStats = [
 export default function CollectifPage() {
   return (
     <Layout>
-      {/* Hero Section amélioré */}
-      <section className="pt-32 pb-24 bg-white relative overflow-hidden">
-        {/* Pattern de fond subtil */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-secondary rounded-full blur-3xl"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 bg-primary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-1/3 w-28 h-28 bg-secondary rounded-full blur-3xl"></div>
-        </div>
+      {/* Hero Section */}
+      <Container className="mt-52 z-10">
+        <div className="space-x-reverse md:grid md:grid-cols-12 gap-x-8 items-center">
+          <div className="md:col-span-12 lg:col-span-7 xl:col-span-7">
+            <h1 className="text-4xl font-airbnb text-black lg:text-5xl font-medium leading-12 md:leading-16 mb-4 font-ca-slalom coin-shimmer-responsive">
+              Le collectif de la nouvelle génération d'entrepreneurs Amiénois
+            </h1>
 
-        <Container className="relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="mb-6"
-            >
-              <span className="text-sm font-semibold text-secondary bg-clip-text mb-4 block">
-                Notre communauté
-              </span>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium leading-tight text-primary mb-6 font-ca-slalom">
-                Le Collectif
-                <br />
-                <span className="text-secondary">Amiens Next</span>
-              </h1>
-            </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg md:text-xl text-black font-epilogue leading-relaxed max-w-4xl mx-auto mb-12"
-            >
+            <p className="text-md text-black font-epilogue leading-relaxed mb-12 max-w-xl">
               Découvrez une communauté d'entrepreneurs passionnés qui
               transforment Amiens en territoire d'innovation et de croissance.
               Freelances, dirigeants, artisans et startuppers unis par une même
               ambition.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
-            >
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button>Rejoindre le collectif</Button>
               <Button variant="outline">Découvrir nos événements</Button>
-            </motion.div>
+            </div>
+          </div>
 
-            {/* Badges des profils épurés */}
+          <div className="hidden lg:col-span-5 xl:col-span-5 lg:block">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-wrap justify-center gap-3"
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative w-full h-0 pb-[100%] overflow-hidden"
             >
-              {[
-                { label: "Freelances" },
-                { label: "Startups" },
-                { label: "Artisans" },
-                { label: "Dirigeants" },
-              ].map((profile) => (
-                <div
-                  key={profile.label}
-                  className="px-4 py-2 bg-gray-50 rounded-lg border border-gray-100 hover:bg-gray-100 transition-colors duration-200"
-                >
-                  <span className="text-sm font-medium text-black font-epilogue">
-                    {profile.label}
-                  </span>
-                </div>
-              ))}
+              <Image
+                src="/img/amiens.png"
+                alt="Photo du collectif d'entrepreneurs"
+                fill
+                className="object-cover"
+              />
             </motion.div>
           </div>
-        </Container>
-      </section>
+        </div>
+      </Container>
 
       {/* Section Mission */}
       <section className="py-16 bg-white">
@@ -125,7 +89,7 @@ export default function CollectifPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6 font-ca-slalom">
+              <h2 className="text-3xl md:text-4xl font-medium text-black mb-6 font-ca-slalom">
                 Notre Mission
               </h2>
               <p className="text-md text-black font-epilogue leading-relaxed max-w-3xl mx-auto">
@@ -165,7 +129,7 @@ export default function CollectifPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-3xl md:text-4xl font-medium text-primary mb-4 font-ca-slalom"
+              className="text-3xl md:text-4xl font-medium text-black mb-4 font-ca-slalom"
             >
               Nos Valeurs
             </motion.h2>
@@ -209,7 +173,7 @@ export default function CollectifPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <h3 className="text-xl font-medium text-primary mb-3 font-ca-slalom">
+                <h3 className="text-xl font-medium text-black mb-3 font-ca-slalom">
                   {value.title}
                 </h3>
                 <p className="text-black font-epilogue leading-relaxed">
@@ -229,7 +193,7 @@ export default function CollectifPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-3xl md:text-4xl font-medium text-primary mb-4 font-ca-slalom"
+              className="text-3xl md:text-4xl font-medium text-black mb-4 font-ca-slalom"
             >
               Qui peut rejoindre ?
             </motion.h2>
@@ -269,7 +233,7 @@ export default function CollectifPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <h3 className="text-lg font-medium text-primary mb-2 font-ca-slalom">
+                <h3 className="text-lg font-medium text-black mb-2 font-ca-slalom">
                   {type.title}
                 </h3>
                 <p className="text-black font-epilogue text-sm">
@@ -289,7 +253,7 @@ export default function CollectifPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-3xl md:text-4xl font-medium text-primary mb-4 font-ca-slalom"
+              className="text-3xl md:text-4xl font-medium text-black mb-4 font-ca-slalom"
             >
               Nos événements
             </motion.h2>
@@ -329,7 +293,7 @@ export default function CollectifPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <h3 className="text-xl font-medium text-primary mb-3 font-ca-slalom">
+                <h3 className="text-xl font-medium text-black mb-3 font-ca-slalom">
                   {event.title}
                 </h3>
                 <p className="text-black font-epilogue leading-relaxed">
@@ -352,7 +316,7 @@ export default function CollectifPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-3xl md:text-4xl font-medium text-primary mb-6 font-ca-slalom"
+              className="text-3xl md:text-4xl font-medium text-black mb-6 font-ca-slalom"
             >
               Prêt à rejoindre l'aventure ?
             </motion.h2>
