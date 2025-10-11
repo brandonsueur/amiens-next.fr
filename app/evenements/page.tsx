@@ -224,7 +224,7 @@ export default function EvenementsPage() {
         </Container>
       </section>
 
-      {/* Prochains événements */}
+      {/* Prochains événements
       <section className="py-16 md:py-24 bg-white">
         <Container>
           <div className="text-center mb-16">
@@ -325,7 +325,7 @@ export default function EvenementsPage() {
             ))}
           </div>
         </Container>
-      </section>
+      </section> */}
 
       {/* Comment participer */}
       <section className="py-16 md:py-24 bg-white">
