@@ -18,9 +18,6 @@ export default async function BlogPage() {
     <Layout>
       <Container className="mt-52 z-10">
         <div className="text-center max-w-4xl mx-auto">
-          <span className="text-sm font-semibold text-gray-600 bg-clip-text mb-4 block">
-            Ressources entrepreneuriales
-          </span>
           <h1 className="text-4xl text-black lg:text-5xl font-medium leading-12 md:leading-16 mb-4 font-ca-slalom coin-shimmer-responsive">
             Le Blog
             <br />
@@ -169,39 +166,6 @@ export default async function BlogPage() {
             <p className="text-xs text-gray-500 font-epilogue mt-4">
               Pas de spam, désinscription possible à tout moment
             </p>
-          </div>
-        </Container>
-      </section>
-
-      {/* Section Catégories et Markdown */}
-      <section className="py-16 bg-gray-50">
-        <Container>
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white rounded-2xl p-8 border border-gray-200">
-              <h2 className="text-2xl font-medium text-black mb-4 font-ca-slalom">
-                �� Système de blog avec Markdown
-              </h2>
-              <p className="text-gray-600 font-epilogue mb-6 leading-relaxed">
-                Notre blog fonctionne maintenant avec des{" "}
-                <strong>fichiers Markdown statiques</strong> pour une gestion
-                simple et performante. SEO optimisé, génération automatique et
-                design cohérent !
-              </p>
-              <div className="flex flex-wrap gap-2 justify-center mb-6">
-                {categories.slice(1).map((category) => (
-                  <span
-                    key={category.id}
-                    className="text-sm px-3 py-1 bg-gray-100 text-gray-700 rounded-full font-epilogue"
-                  >
-                    {category.label} ({category.count})
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button>Voir la documentation</Button>
-                <Button variant="outline">Créer un article</Button>
-              </div>
-            </div>
           </div>
         </Container>
       </section>
