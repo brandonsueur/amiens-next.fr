@@ -6,7 +6,7 @@ date: "2024-12-15"
 readTime: "22 min"
 category: "IA & Tech"
 image: "/img/blog/outils-ia-entrepreneurs.jpg"
-featured: true
+featured: false
 tags:
   [
     "intelligence artificielle",

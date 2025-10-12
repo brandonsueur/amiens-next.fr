@@ -20,8 +20,6 @@ export default async function BlogPage() {
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl text-black lg:text-5xl font-medium leading-12 md:leading-16 mb-4 font-ca-slalom coin-shimmer-responsive">
             Le Blog
-            <br />
-            <span className="text-black">Amiens Next</span>
           </h1>
           <p className="text-md text-black font-epilogue leading-relaxed mb-12 max-w-2xl mx-auto">
             Conseils pratiques, analyses de marché, portraits d'entrepreneurs et

@@ -6,7 +6,7 @@ date: "2024-12-15"
 readTime: "18 min"
 category: "Productivité"
 image: "/img/blog/routine-entrepreneurs-millionnaires.jpg"
-featured: true
+featured: false
 tags:
   [
     "routine matinale",

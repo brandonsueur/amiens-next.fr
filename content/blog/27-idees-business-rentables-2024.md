@@ -6,7 +6,7 @@ date: "2024-12-15"
 readTime: "15 min"
 category: "Business"
 image: "/img/blog/idees-business-rentables.jpg"
-featured: true
+featured: false
 tags:
   [
     "business en ligne",

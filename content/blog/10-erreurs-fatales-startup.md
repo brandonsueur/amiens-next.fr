@@ -6,7 +6,7 @@ date: "2024-12-15"
 readTime: "12 min"
 category: "Startup"
 image: "/img/blog/erreurs-fatales-startup.jpg"
-featured: true
+featured: false
 tags: ["startup", "entrepreneuriat", "erreurs", "échec", "business", "conseils"]
 seo:
   title: "10 Erreurs Fatales qui Tuent les Startups - Guide Entrepreneur 2024"
