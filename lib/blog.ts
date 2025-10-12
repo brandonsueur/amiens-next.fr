@@ -1,3 +1,4 @@
+import { generateOgImageUrl } from "@/utils/og-image";
 import { format, parseISO } from "date-fns";
 import { fr } from "date-fns/locale";
 import fs from "fs";
@@ -264,4 +265,12 @@ export function generateBlogSitemap(): Array<{
     url: `/blog/${post.slug}`,
     lastModified: new Date(post.date).toISOString(),
   }));
+}
+
+// Obtenir l'URL de l'image OpenGraph pour un article
+export function getPostOgImageUrl(
+  post: BlogPost | BlogPostMetadata,
+  baseUrl: string = ""
+): string {
+  return generateOgImageUrl(post as BlogPost, baseUrl);
 }

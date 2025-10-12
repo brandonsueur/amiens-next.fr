@@ -1,7 +1,12 @@
 import { Layout } from "@/components/layout";
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
-import { getPostBySlug, getAllPosts, getRelatedPosts } from "@/lib/blog";
+import {
+  getPostBySlug,
+  getAllPosts,
+  getRelatedPosts,
+  getPostOgImageUrl,
+} from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -207,21 +212,40 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     };
   }
 
+  // Générer l'URL de l'image OpenGraph
+  const ogImageUrl = getPostOgImageUrl(
+    post,
+    process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+  );
+
   return {
     title: post.seo.title,
     description: post.seo.description,
     keywords: post.seo.keywords,
+    authors: [{ name: post.author }],
     openGraph: {
       title: post.seo.title,
       description: post.seo.description,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      siteName: "Amiens Next",
+      locale: "fr_FR",
     },
     twitter: {
       card: "summary_large_image",
       title: post.seo.title,
       description: post.seo.description,
+      images: [ogImageUrl],
+      creator: `@${post.author.replace(" ", "").toLowerCase()}`,
     },
   };
 }

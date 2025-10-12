@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout";
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import { FAQ } from "@/components/faq";
+import { BlogOgImage } from "@/components/blog";
 import { blogFaqData } from "@/constants/faq";
 import { getAllPosts, getFeaturedPosts, getCategories } from "@/lib/blog";
 import Link from "next/link";
@@ -44,13 +45,11 @@ export default async function BlogPage() {
 
             <article className="max-w-6xl mx-auto bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="grid lg:grid-cols-2 gap-8 p-8">
-                <div className="relative h-64 lg:h-80 rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-gray-500 font-epilogue text-lg">
-                      📊 {featuredPost.category}
-                    </span>
-                  </div>
-                </div>
+                <BlogOgImage
+                  post={featuredPost}
+                  className="h-64 lg:h-80 rounded-xl"
+                  priority={true}
+                />
                 <div className="flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-xs px-3 py-1 bg-black text-white rounded-full font-epilogue">
@@ -99,16 +98,7 @@ export default async function BlogPage() {
                 key={post.slug}
                 className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-gray-300"
               >
-                <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-gray-500 font-epilogue text-sm">
-                      {post.category === "Analyse" && "📊"}
-                      {post.category === "Guide" && "💼"}
-                      {post.category === "Networking" && "🤝"}
-                      {post.category === "Innovation" && "🚀"} {post.category}
-                    </span>
-                  </div>
-                </div>
+                <BlogOgImage post={post} className="h-48" />
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full font-epilogue">
