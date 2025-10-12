@@ -125,7 +125,7 @@ export async function GET(request: NextRequest) {
           {/* Temps de lecture en bas */}
           <div
             style={{
-              fontSize: "20px",
+              fontSize: "30px",
               color: "black",
               marginTop: "40px",
               fontWeight: "400",
