@@ -1,6 +1,6 @@
+import { generateBlogOgImageUrl } from "@/utils/og-image";
 import { Metadata } from "next";
 import { project } from "./project";
-import { generateBlogOgImageUrl } from "@/utils/og-image";
 
 export const metadata: Metadata = {
   title: project.title,
