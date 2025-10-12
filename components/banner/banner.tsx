@@ -39,12 +39,9 @@ export const Banner = () => {
             <Link href="/rejoindre">
               <Button>Rejoindre</Button>
             </Link>
-            <Button
-              variant="outline"
-              onClick={() => scrollToSection("collectif")}
-            >
-              Le Collectif
-            </Button>
+            <Link href="/collectif">
+              <Button variant="outline">Le Collectif</Button>
+            </Link>
           </div>
         </div>
 
