@@ -63,7 +63,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </p>
 
             <div className="flex items-center gap-4 pb-8 border-b border-gray-200">
-              <div className="w-12 h-12 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-linear-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center">
                 <span className="text-gray-600 font-epilogue font-medium">
                   {post.author.charAt(0)}
                 </span>
@@ -131,7 +131,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     key={relatedPost.slug}
                     className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-gray-300"
                   >
-                    <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200">
+                    <div className="relative h-48 bg-linear-to-br from-gray-100 to-gray-200">
                       <div className="w-full h-full flex items-center justify-center">
                         <span className="text-gray-500 font-epilogue text-sm">
                           {relatedPost.category === "Analyse" && "📊"}

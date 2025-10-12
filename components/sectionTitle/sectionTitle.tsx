@@ -29,7 +29,7 @@ export const SectionTitle = ({
       )}
     >
       {subTitle && (
-        <span className="text-md leading-4 bg-gradient-to-r text-secondary inline-block bg-clip-text font-medium">
+        <span className="text-md leading-4 bg-linear-to-r text-secondary inline-block bg-clip-text font-medium">
           {subTitle}
         </span>
       )}

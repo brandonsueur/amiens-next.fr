@@ -59,7 +59,7 @@ export function PopularServices({
                       {service.features.map((feature, index) => (
                         <li key={index} className="flex items-start">
                           <div
-                            className="w-1.5 h-1.5 rounded-full mt-2 mr-3 flex-shrink-0"
+                            className="w-1.5 h-1.5 rounded-full mt-2 mr-3 shrink-0"
                             style={{ backgroundColor: activityColor }}
                           ></div>
                           <span className="text-gray-600 text-sm font-epilogue">

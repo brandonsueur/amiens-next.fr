@@ -137,7 +137,7 @@ export default function ServicesPage() {
           {/* Section CTA finale */}
           <motion.div
             variants={itemVariants}
-            className="mt-20 text-center bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-12"
+            className="mt-20 text-center bg-linear-to-br from-blue-50 to-blue-100 rounded-2xl p-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Besoin d&apos;un service personnalisé ?

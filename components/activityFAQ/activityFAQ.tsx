@@ -50,7 +50,7 @@ export function ActivityFAQ({ faqData, activityName }: ActivityFAQProps) {
                 className="w-full flex cursor-pointer items-center justify-between p-6 text-left transition-colors duration-200"
               >
                 <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center">
+                  <div className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center">
                     <motion.div className="text-black font-bold text-lg">
                       {openItems.has(item.id) ? (
                         <SquareArrowDownRight className="text-secondary" />
@@ -72,7 +72,7 @@ export function ActivityFAQ({ faqData, activityName }: ActivityFAQProps) {
                 <motion.div
                   animate={{ rotate: openItems.has(item.id) ? 180 : 0 }}
                   transition={{ duration: 0.2 }}
-                  className="flex-shrink-0 ml-4"
+                  className="shrink-0 ml-4"
                 >
                   <svg
                     className="w-5 h-5 text-gray-400"

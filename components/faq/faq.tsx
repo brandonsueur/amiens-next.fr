@@ -120,7 +120,7 @@ export function FAQ({
                 <motion.div
                   animate={{ rotate: openItems.has(item.id) ? 45 : 0 }}
                   transition={{ duration: 0.1, ease: "easeInOut" }}
-                  className="flex-shrink-0"
+                  className="shrink-0"
                 >
                   <div
                     className={clsx(

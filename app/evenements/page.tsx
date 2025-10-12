@@ -313,7 +313,7 @@ export default function EvenementsPage() {
                     </div>
                   </div>
 
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     {event.status === "Ouvert" ? (
                       <Button>S'inscrire</Button>
                     ) : (
