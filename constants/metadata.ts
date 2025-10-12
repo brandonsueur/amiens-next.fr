@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { project } from "./project";
+import { generateBlogOgImageUrl } from "@/utils/og-image";
 
 export const metadata: Metadata = {
   title: project.title,
@@ -21,11 +22,20 @@ export const metadata: Metadata = {
     siteName: project.siteName,
     locale: "fr_FR",
     type: "website",
+    images: [
+      {
+        url: "/OG.jpg",
+        width: 1200,
+        height: 630,
+        alt: project.title,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: project.title,
     description: project.description,
+    images: ["/OG.jpg"],
   },
   robots: {
     index: true,
@@ -65,11 +75,20 @@ export const blogMetadata: Metadata = {
     siteName: project.siteName,
     locale: "fr_FR",
     type: "website",
+    images: [
+      {
+        url: generateBlogOgImageUrl(project.url),
+        width: 1200,
+        height: 630,
+        alt: `Blog - ${project.siteName}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `Blog - ${project.siteName}`,
     description:
       "Conseils entrepreneuriaux, analyses de marché et portraits d'entrepreneurs amiénois.",
+    images: [generateBlogOgImageUrl(project.url)],
   },
 };

@@ -4,8 +4,11 @@ import { Button } from "@/components/button";
 import { FAQ } from "@/components/faq";
 import { BlogOgImage } from "@/components/blog";
 import { blogFaqData } from "@/constants/faq";
+import { blogMetadata } from "@/constants/metadata";
 import { getAllPosts, getFeaturedPosts, getCategories } from "@/lib/blog";
 import Link from "next/link";
+
+export const metadata = blogMetadata;
 
 export default async function BlogPage() {
   const posts = await getAllPosts();

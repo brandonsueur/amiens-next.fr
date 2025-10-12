@@ -28,11 +28,22 @@ export function generateCustomOgImageUrl(
   const params = new URLSearchParams({
     title,
     category,
+    ...(readTime && { readTime }),
   });
 
-  if (readTime) params.set("readTime", readTime);
-
   return `${baseUrl}/api/og?${params.toString()}`;
+}
+
+/**
+ * Génère l'URL de l'image OpenGraph pour la page principale du blog
+ */
+export function generateBlogOgImageUrl(baseUrl: string = ""): string {
+  return generateCustomOgImageUrl(
+    "Le Blog",
+    "Entrepreneuriat",
+    "Conseils & Analyses",
+    baseUrl
+  );
 }
 
 /**
