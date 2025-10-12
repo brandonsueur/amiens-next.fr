@@ -1,8 +1,8 @@
 ---
-title: "27 idées de business qui rapportent 10 000€/mois en 2024 (sans investissement)"
+title: "27 idées de business qui rapportent 10 000€/mois en 2025 (sans investissement)"
 excerpt: "Découvrez les business models les plus rentables du moment. Ces entrepreneurs gagnent plus que des cadres supérieurs depuis leur salon. Modèles reproductibles inclus."
 author: "Sophie Martin"
-date: "2024-12-15"
+date: "2025-12-15"
 readTime: "15 min"
 category: "Business"
 image: "/img/blog/idees-business-rentables.jpg"
@@ -17,7 +17,7 @@ tags:
     "side hustle",
   ]
 seo:
-  title: "27 Idées Business Rentables 2024 - Gagner 10 000€/mois Sans Investissement"
+  title: "27 Idées Business Rentables 2025 - Gagner 10 000€/mois Sans Investissement"
   description: "27 idées de business ultra-rentables pour gagner 10 000€/mois minimum. Modèles éprouvés, témoignages réels, étapes détaillées pour chaque opportunité."
   keywords:
     [
@@ -31,7 +31,7 @@ seo:
     ]
 ---
 
-# 27 Idées de Business qui Rapportent 10 000€/mois en 2024 (Modèles Reproductibles)
+# 27 Idées de Business qui Rapportent 10 000€/mois en 2025 (Modèles Reproductibles)
 
 **Marc, 34 ans, ex-comptable** : _"J'ai quitté mon CDI il y a 18 mois. Aujourd'hui je gagne 15 000€/mois avec mon business en ligne. Ma femme pensait que j'étais devenu fou..."_
 
@@ -275,7 +275,7 @@ _Attention : Ces opportunités ne resteront pas ouvertes éternellement. Plus vo
 
 **💰 Potentiel : 5 000€ - 200 000€/mois**
 
-**Le marché** : 366 milliards de dollars en 2024 (croissance 10% par an).
+**Le marché** : 366 milliards de dollars en 2025 (croissance 10% par an).
 
 **Témoignages inspirants** :
 
