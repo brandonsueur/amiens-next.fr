@@ -1,4 +1,3 @@
-à;
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: [
