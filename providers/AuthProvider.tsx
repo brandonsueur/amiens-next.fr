@@ -7,7 +7,7 @@ import {
   useEffect,
 } from "react";
 import { useRouter } from "next/navigation";
-import { UserDTO } from "@/dto/user";
+
 import axios from "axios";
 import { getUserByUuid } from "@/requests/users";
 import { toast } from "sonner";
@@ -24,12 +24,12 @@ export type Token = {
 
 interface AuthResponse {
   token: Token;
-  user: UserDTO;
+  user: any;
 }
 
 type AuthContextType = {
   token: Token | null;
-  user: UserDTO | null;
+  user: any | null;
   isAuthenticated: boolean;
   isLoading: boolean;
   setRefreshUser: (refresh: boolean) => void;
@@ -43,7 +43,7 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<UserDTO | null>(null);
+  const [user, setUser] = useState<any | null>(null);
   const [token, setToken] = useState<Token | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [refreshUser, setRefreshUser] = useState(false);
@@ -70,9 +70,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const storedToken = JSON.parse(localStorage.getItem("token") || "null");
-    const storedUser = JSON.parse(
-      localStorage.getItem("user") || "null",
-    ) as UserDTO | null;
+    const storedUser = JSON.parse(localStorage.getItem("user") || "null") as
+      | any
+      | null;
 
     if (storedToken && storedUser) {
       setToken(storedToken);
@@ -108,7 +108,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     try {
       const response = await axios.post<{ data: AuthResponse }>(
         `${process.env.NEXT_PUBLIC_API_URL}/auth/login`,
-        credentials,
+        credentials
       );
 
       const { token, user } = response.data.data;

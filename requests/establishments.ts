@@ -1,4 +1,3 @@
-import { Establishment } from "@/dto/establishment";
 import { axios } from "@/utils";
 import { UUID } from "crypto";
 
@@ -20,13 +19,12 @@ export const getEstablishments = (
 export const getEstablishmentByUuid = (uuid: UUID) =>
   axios.get(`/establishments/${uuid}`);
 
-export const createEstablishment = (
-  establishmentData: Partial<Establishment>
-) => axios.post("/establishments", establishmentData);
+export const createEstablishment = (establishmentData: Partial<any>) =>
+  axios.post("/establishments", establishmentData);
 
 export const updateEstablishment = (
   uuid: UUID,
-  establishmentData: Partial<Establishment>
+  establishmentData: Partial<any>
 ) => axios.put(`/establishments/${uuid}`, establishmentData);
 
 export const updateEstablishmentStatus = (
