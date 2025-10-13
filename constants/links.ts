@@ -9,6 +9,7 @@ export const navigationsLinks: NavigationLink[] = [
   { href: "/collectif", label: "Le Collectif" },
   { href: "/evenements", label: "Événements" },
   { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const footerConfig = {

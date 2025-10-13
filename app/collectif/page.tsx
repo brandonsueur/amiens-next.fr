@@ -9,7 +9,6 @@ import { collectifFaqData } from "@/constants/faq";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// Données des wstatistiques du collectif (même que la home)
 const collectifStats = [
   {
     id: "membres",
