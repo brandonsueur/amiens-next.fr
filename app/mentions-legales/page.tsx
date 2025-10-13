@@ -13,11 +13,9 @@ export default function MentionsLegales() {
               Édition du site
             </h2>
             <p className="mt-4 text-lg text-gray-500">
-              Le présent site web est édité par la société {project.siteName},
-              SARL, société à responsabilité limitée au capital de 1 000€,
+              Le présent site web est édité par la société H2BS GROUP,
               immatriculée au Registre du Commerce et des Sociétés sous le siren
-              990 102 626, dont le siège social est situé{" "}
-              {project.contact.address}.
+              981 722 507.
             </p>
             <p className="mt-4 text-lg text-gray-500">
               Numéro de TVA intracommunautaire : X
