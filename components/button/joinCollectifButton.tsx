@@ -8,21 +8,17 @@ interface JoinCollectifButtonProps {
   children?: React.ReactNode;
 }
 
-export function JoinCollectifButton({ 
-  variant = "primary", 
+export function JoinCollectifButton({
+  variant = "primary",
   className,
-  children = "Rejoindre le collectif"
+  children = "Rejoindre le collectif",
 }: JoinCollectifButtonProps) {
   const handleClick = () => {
     window.location.href = "/contact?type=collectif";
   };
 
   return (
-    <Button 
-      onClick={handleClick} 
-      variant={variant}
-      className={className}
-    >
+    <Button onClick={handleClick} variant={variant} className={className}>
       {children}
     </Button>
   );

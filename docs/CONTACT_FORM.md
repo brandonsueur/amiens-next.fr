@@ -5,14 +5,17 @@ Cette documentation explique comment utiliser la page de contact dynamique d'Ami
 ## Fonctionnalités
 
 ### 1. Formulaire de Contact Standard
+
 - **URL** : `/contact`
 - **Usage** : Demandes d'informations générales, questions sur les événements, partenariats, etc.
 
 ### 2. Formulaire de Candidature au Collectif
+
 - **URL** : `/contact?type=collectif`
 - **Usage** : Candidature pour rejoindre le collectif d'entrepreneurs
 
 ### 3. Redirection `/rejoindre`
+
 - **URL** : `/rejoindre`
 - **Comportement** : Redirige automatiquement vers `/contact?type=collectif`
 
@@ -23,6 +26,7 @@ Le formulaire utilise **Formspree** avec l'endpoint : `https://formspree.io/f/xw
 ### Données Envoyées
 
 Tous les formulaires envoient :
+
 - `firstName` : Prénom
 - `lastName` : Nom
 - `email` : Email
@@ -34,6 +38,7 @@ Tous les formulaires envoient :
 ## Types de Formulaires
 
 ### Contact Standard
+
 ```typescript
 {
   title: "Contactez-nous",
@@ -46,6 +51,7 @@ Tous les formulaires envoient :
 ```
 
 Sujets disponibles :
+
 - Demande d'informations générales
 - Question sur les événements
 - Partenariat
@@ -53,6 +59,7 @@ Sujets disponibles :
 - Autre
 
 ### Candidature Collectif
+
 ```typescript
 {
   title: "Rejoindre le collectif",
@@ -65,6 +72,7 @@ Sujets disponibles :
 ```
 
 Sujets disponibles :
+
 - Candidature entrepreneur
 - Candidature freelance
 - Candidature dirigeant
@@ -74,20 +82,25 @@ Sujets disponibles :
 ## Composants
 
 ### `DynamicContactForm`
+
 Composant principal qui gère les deux types de formulaires.
 
 **Props :**
+
 - `formType?: "contact" | "collectif" | string` - Type de formulaire à afficher
 
 ### `JoinCollectifButton`
+
 Bouton réutilisable pour rediriger vers le formulaire de candidature.
 
 **Props :**
+
 - `variant?: "primary" | "secondary" | "outline" | "ghost"` - Style du bouton
 - `className?: string` - Classes CSS additionnelles
 - `children?: React.ReactNode` - Texte du bouton (défaut: "Rejoindre le collectif")
 
 **Usage :**
+
 ```tsx
 import { JoinCollectifButton } from "@/components/button";
 

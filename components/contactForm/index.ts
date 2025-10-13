@@ -1,2 +1,2 @@
-export { ContactForm } from './contactForm';
-export { DynamicContactForm } from './dynamicContactForm';
+export { ContactForm } from "./contactForm";
+export { DynamicContactForm } from "./dynamicContactForm";

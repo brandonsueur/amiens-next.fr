@@ -26,20 +26,23 @@ const getFormConfig = (type: string) => {
     case "collectif":
       return {
         title: "Rejoindre le collectif",
-        description: "Vous souhaitez rejoindre notre communauté d'entrepreneurs, freelances et dirigeants ? Présentez-vous et dites-nous en plus sur votre activité.",
+        description:
+          "Vous souhaitez rejoindre notre communauté d'entrepreneurs, freelances et dirigeants ? Présentez-vous et dites-nous en plus sur votre activité.",
         submitText: "Envoyer ma candidature",
         defaultSubject: "Demande d'adhésion au collectif Amiens Next",
-        placeholder: "Présentez-vous, votre activité, vos motivations pour rejoindre le collectif...",
-        showBusinessInfo: true
+        placeholder:
+          "Présentez-vous, votre activité, vos motivations pour rejoindre le collectif...",
+        showBusinessInfo: true,
       };
     default:
       return {
         title: "Contactez-nous",
-        description: "Vous avez une question, besoin d'informations ou souhaitez en savoir plus sur nos services ? N'hésitez pas à nous contacter, nous vous répondrons rapidement.",
+        description:
+          "Vous avez une question, besoin d'informations ou souhaitez en savoir plus sur nos services ? N'hésitez pas à nous contacter, nous vous répondrons rapidement.",
         submitText: "Envoyer le message",
         defaultSubject: "Demande d'informations",
         placeholder: "Décrivez votre demande...",
-        showBusinessInfo: false
+        showBusinessInfo: false,
       };
   }
 };
@@ -53,7 +56,9 @@ const initialFormData: ContactFormData = {
   message: "",
 };
 
-export function DynamicContactForm({ formType = "contact" }: DynamicContactFormProps) {
+export function DynamicContactForm({
+  formType = "contact",
+}: DynamicContactFormProps) {
   const [formData, setFormData] = useState<ContactFormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -126,13 +131,14 @@ export function DynamicContactForm({ formType = "contact" }: DynamicContactFormP
               </svg>
             </div>
             <h1 className="text-3xl font-bold text-black mb-4 font-ca-slalom">
-              {formType === "collectif" ? "Candidature envoyée !" : "Message envoyé avec succès !"}
+              {formType === "collectif"
+                ? "Candidature envoyée !"
+                : "Message envoyé avec succès !"}
             </h1>
             <p className="text-gray-600 text-lg mb-8 font-epilogue">
-              {formType === "collectif" 
+              {formType === "collectif"
                 ? "Merci pour votre candidature. Nous examinerons votre demande et vous contacterons prochainement."
-                : "Merci pour votre message. Nous vous contacterons dans les plus brefs délais."
-              }
+                : "Merci pour votre message. Nous vous contacterons dans les plus brefs délais."}
             </p>
             <Button onClick={() => (window.location.href = "/")}>
               Retour à l&apos;accueil
@@ -147,10 +153,7 @@ export function DynamicContactForm({ formType = "contact" }: DynamicContactFormP
     <section className="py-16 px-6 mt-32">
       <Container>
         <div className="mx-auto">
-          <PageTitle
-            title={config.title}
-            description={config.description}
-          />
+          <PageTitle title={config.title} description={config.description} />
 
           <div className="grid lg:grid-cols-3 gap-12 mt-12">
             {/* Informations de contact */}
@@ -217,7 +220,8 @@ export function DynamicContactForm({ formType = "contact" }: DynamicContactFormP
                     Événements
                   </h3>
                   <p className="text-gray-600 text-sm font-epilogue mb-4">
-                    Participez à nos événements de networking et découvrez notre communauté.
+                    Participez à nos événements de networking et découvrez notre
+                    communauté.
                   </p>
                   <Button
                     onClick={() => (window.location.href = "/evenements")}
@@ -234,16 +238,14 @@ export function DynamicContactForm({ formType = "contact" }: DynamicContactFormP
             <div className="lg:col-span-2">
               <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
                 <h3 className="text-xl font-bold text-black mb-6 font-ca-slalom">
-                  {formType === "collectif" ? "Votre candidature" : "Envoyez-nous un message"}
+                  {formType === "collectif"
+                    ? "Votre candidature"
+                    : "Envoyez-nous un message"}
                 </h3>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <input
-                    type="hidden"
-                    name="_form_type"
-                    value={formType}
-                  />
-                  
+                  <input type="hidden" name="_form_type" value={formType} />
+
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label
@@ -338,16 +340,30 @@ export function DynamicContactForm({ formType = "contact" }: DynamicContactFormP
                       <option value="">{config.defaultSubject}</option>
                       {formType === "collectif" ? (
                         <>
-                          <option value="Candidature entrepreneur">Candidature entrepreneur</option>
-                          <option value="Candidature freelance">Candidature freelance</option>
-                          <option value="Candidature dirigeant">Candidature dirigeant</option>
-                          <option value="Candidature startup">Candidature startup</option>
-                          <option value="Autre candidature">Autre candidature</option>
+                          <option value="Candidature entrepreneur">
+                            Candidature entrepreneur
+                          </option>
+                          <option value="Candidature freelance">
+                            Candidature freelance
+                          </option>
+                          <option value="Candidature dirigeant">
+                            Candidature dirigeant
+                          </option>
+                          <option value="Candidature startup">
+                            Candidature startup
+                          </option>
+                          <option value="Autre candidature">
+                            Autre candidature
+                          </option>
                         </>
                       ) : (
                         <>
-                          <option value="Demande d'informations générales">Demande d'informations générales</option>
-                          <option value="Question sur les événements">Question sur les événements</option>
+                          <option value="Demande d'informations générales">
+                            Demande d'informations générales
+                          </option>
+                          <option value="Question sur les événements">
+                            Question sur les événements
+                          </option>
                           <option value="Partenariat">Partenariat</option>
                           <option value="Presse / Media">Presse / Media</option>
                           <option value="Autre">Autre</option>
@@ -388,7 +404,9 @@ export function DynamicContactForm({ formType = "contact" }: DynamicContactFormP
                       <Button
                         type="button"
                         variant="outline"
-                        onClick={() => (window.location.href = "/contact?type=collectif")}
+                        onClick={() =>
+                          (window.location.href = "/contact?type=collectif")
+                        }
                         className="flex-1"
                       >
                         Rejoindre le collectif
