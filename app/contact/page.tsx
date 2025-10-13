@@ -9,15 +9,16 @@ export const metadata: Metadata = generateMetadata(
 );
 
 interface PageProps {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default function ContactPage({ searchParams }: PageProps) {
-  const formType = searchParams?.type as string;
+export default async function ContactPage({ searchParams }: PageProps) {
+  const resolvedSearchParams = await searchParams;
+  const formType = resolvedSearchParams?.type as string;
 
   return (
     <Layout>
-      <DynamicContactForm formType={formType} />;
+      <DynamicContactForm formType={formType} />
     </Layout>
   );
 }
