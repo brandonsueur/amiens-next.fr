@@ -66,7 +66,7 @@ export const project = {
   keywords: keywords.join(", "),
   contact: {
     address: "Amiens, Hauts-de-France",
-    email: "contact@amiens-next.fr",
+    email: "amiensnext@gmail.com",
     phone: "0608151628",
   },
   socials: socials,
