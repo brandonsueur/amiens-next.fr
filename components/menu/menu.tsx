@@ -49,7 +49,7 @@ export const Menu = () => {
         <Link href="/">
           <Image
             src="/img/logo.svg"
-            alt="Logo Inergis"
+            alt="Logo AMIENS NEXT"
             width={180}
             height={49}
             className="h-10 w-auto z-40"
